@@ -1,0 +1,41 @@
+<%- include('partials/header') %>
+<%- include('partials/deleteSearch') %>
+			<!-- Tab content -->
+			<div class="updateTabcontent">
+				<h2>CHILDS ADMISSION RECORDS</h2>
+				<div class="visitors-content">
+					<table>
+						<thead>
+							<tr>
+								<th>No</th>
+								<th>Admission Number</th>
+								<th>Specialist in Charge</th>
+								<th>Admission Date</th>
+								<th colspan="3">Action</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<% let num = 0 %>
+							<% admissions.forEach(admission => { %>
+								<tr>
+									<td><%- num += 1 %></td>
+									<td><%- admission.admissionID %></td>
+									<td><%- admission.specialist %></td>
+									<td class="centered"><%- admission.admittedDate.toString().substring(0, 15) %></td>
+									<td><a href="/admission/<%- admission._id%>">View</a></td>
+									<td><a href="/admission/<%- admission._id%>/edit">Edit</a></td>
+									<td>
+										<form action="/admission/<%- admission._id%>?_method=DELETE">
+											<button type="submit">Delete</button>
+										</form>
+									</td>
+								</tr>
+							<% }); %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

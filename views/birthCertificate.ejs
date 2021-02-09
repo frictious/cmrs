@@ -1,0 +1,77 @@
+<%- include('partials/header') %>
+<%- include('partials/reportSearch') %>
+		<!-- Tab content -->
+		<div class="birthCertificate" id="HTMLtoPDF">
+			<section class="report-header">
+				<div class="left">
+					<span>Serial No: <%- Date.now().toString().substring(8, 13) %></span>
+				</div>
+				<div class="center">
+					<span class="logo">
+						<img src="/images/SL_Coat2.png" alt="Sierra Leone Coat of Arms">
+					</span>
+					<div>Republic of Sierra Leone</div>
+					<div>Birth Certificate No: <span class="birth-no"><%- Date.now().toString().substring(9, 11)%></span></div>
+					<% let year = new Date().getFullYear() %>
+					<div>CERTIFIED TRUE COPY OF BC / <%- year %></div>
+				</div>
+				<div class="right">
+					<span>C.R FORM I.B. <%- Date.now().toString().substring(11, 12) %></span><br>
+					<span>Office of the Registrar</span><br>
+					<span>Ministry of Health and Sanitation</span><br>
+					<span>Sierra Leone</span>
+				</div>
+			</section>
+			<section class="report-body">
+				<p>
+					This is to certify that 
+						<input type="text" name="" value="<%- child.firstName %> <%- child.otherName %> <%- child.lastName %>" id="childName" class="middle">,
+						a <%- child.gender %>
+				</p>
+				<p class="half">
+					Child of <input type="text" name="mothersName" id="mothersName" value="<%- mother.firstName %> <%- mother.otherName %> <%- mother.lastName%>" class="left-half"> Nationality <input type="text" name="mothersNationality" id="mothersNationality" value="<%-mother.nationality%>" class="right-half">
+				</p>
+				<p class="full">
+					and <input type="text" name="fathersName" id="fathersName" class="left-half" value="<%- father.firstName %> <%- father.otherName %> <%- father.lastName%>"> Nationality <input type="text" name="fathersNationality" id="fathersNationality" class="right-half" value="<%- father.nationality %>">
+				</p>
+				<p class="full">
+					Was born on <input type="text" name="dob" value="<%- delivery.dateDelivered.toString().substring(0, 15)%>" id="dob" class="left-half"> at <input type="text" name="timeOfBirth" value="<%- delivery.timeOfDelivery%>" id="timeOfBirth" class="right-half">
+				</p>
+				<p class="full">
+					at <input type="text" value="<%- delivery.placeOfDelivery %>" name="placeOfBirth" id="" class="full">
+				</p>
+				<p>
+					This event was registered at <input type="text" name="registrationCentre" id="" class="left-half-vol" value="<%- delivery.registrationCentre%>"> in Registry Volume No <input type="text" name="regVolNo" id="" class="right-half-vol-date" value="<%- (Date.now() * 5).toString().substring(8, 10) %>">
+				</p>
+				<p>
+					<% let val = Date.now().toString().substring(9, 13) %>
+					<% let pageNo = 0 %>
+					<% pageNo = Math.floor(parseFloat(val) / 3) %>
+					Page No <input type="text" name="" id="" value="<%- pageNo.toString().substring(0, 2)  %>" class="left-half-vol"> of the Register of Births in the Republic of Sierra Leone
+				</p>
+				<p>
+					<% let date = new Date().toString() %>
+					Witness my hand this <input type="text" name="" value="<%- new Date().getDate() %>" id="" class="left-half-vol-date"> day of <input type="text" value="<%- date.substring(4, 7) %>" name="" id="" class="right-half-vol"> 20 <input type="text" name="" value="<%- date.substring(13, 15) %>" id="" class="right-half-vol-last">
+				</p>
+			</section>
+			<section class="report-footer">
+				<p class="left">
+					<input type="text" name="" id="" class=""><br>
+					<span>Official</span>
+				</p>
+				<p class="right">
+					<input type="text" name="" id="" class=""><br>
+					<span>Chief Registrar</span>
+				</p>
+
+				<p>
+					<button type="" id="print">Click to print</button>
+				</p>
+
+				<!-- <p class="center">
+					<a href="#" onclick="HTMLtoPDF()">Download Birth Certificate</a>
+				</p> -->
+			</section>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

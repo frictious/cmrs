@@ -1,0 +1,43 @@
+<%- include('partials/header') %>
+<%- include('partials/viewSearch') %>
+			<!-- Tab content -->
+			<div class="updateTabcontent">
+				<div id="visitors-content">
+					<h2>TEST</h2>
+					<form class="visitors-form" action="/visitors/add" method="POST">
+						<fieldset class="visitors-fieldset">
+							<legend>DETAILS</legend>
+							<section class="inputs">
+								<span><input type="text" id="type" name="type" value="<%- test.type %>" readonly><br>
+								<label for="type">Test Type</label><br></span>
+							
+								<span><input class="cls-cID" type="text" id="requestedBy" name="requestedBy" value="<%- test.requestedBy %>" readonly><br>
+								<label class="cls-cID" for="hod">Requested By</label><br></span>
+	
+								<span><input type="text" id="childID" name="childID" value="<%- test.childID %>" readonly><br>
+								<label for="childID">Child ID</label></span><br><br>
+
+								<label for="result">Lab Result</label>
+								<iframe src="/files/<%- test.labResult %>" width="900px" height="500px"></iframe>
+							</section>
+
+							<fieldset class="date-photo">
+								<section>
+									<input type="text" name="done" value="<%- //test.done.toString().substring(0, 10) %>">
+									<label>Test Date</label>
+									<section id="photo">
+										
+									</section>
+								</section>
+							</fieldset>
+	
+							<span class="btn">
+								<!--<input type="submit" name="submit" value="Submit">-->
+							</span>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

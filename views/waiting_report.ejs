@@ -1,0 +1,41 @@
+<%- include('partials/header') %>
+<%- include('partials/viewSearch') %>
+			<!-- Tab content -->
+			<div class="updateTabcontent">
+				<h2>CHILD WAITING RECORDS</h2>
+				<div class="waitings-content">
+					<table>
+						<thead>
+							<tr>
+								<th>No</th>
+								<th>Waiting For</th>
+								<th>Specialist</th>
+								<th>Status</th>
+								<th colspan="3">Action</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<% let num = 0 %>
+							<% waitings.forEach(waiting => { %>
+								<tr>
+									<td class="centered"><%- num += 1 %></td>
+									<td class="centered"><%- waiting.waitingFor %></td>
+									<td class="centered"><%- waiting.specialist %></td>
+									<td class="centered"><%- waiting.status %></td>
+									<td class="centered"><a href="/waiting/<%- waiting._id%>">View</a></td>
+									<td class="centered"><a href="/waiting/<%- waiting._id%>/edit">Edit</a></td>
+									<td class="centered">
+										<form action="/waiting/<%- waiting._id %>?_method=DELETE" method="POST">
+											<button type="submit">Delete</button>
+										</form>
+									</td>
+								</tr>
+							<% }); %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

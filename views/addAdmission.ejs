@@ -1,0 +1,52 @@
+<%- include('partials/header') %>
+<%- include('partials/data-entry') %>
+			<!-- Tab content -->
+			<div class="tabcontent">
+				<div id="admission-content">
+					<h2>ADMISSION DATA ENTRY</h2>
+					<form class="admission-form" action="/admission/add" method="POST">
+						<fieldset class="admission-fieldset">
+							<legend>DETAILS</legend>
+							<section class="inputs">
+								<span><input type="text" id="admissionID" value=<%-`ADN-${Date.now().toString().substring(6, 12)}`%> name="admissionID" readonly><br>
+								<label for="admissionID">Admission number</label></span>
+		
+								<span><input class="cls-cID" type="text" id="childID" name="childID"><br>
+								<label class="cls-cID" for="childID">ChildID</label><br></span>
+								
+								<span><input type="text" id="admission-ward" name="ward"><br>
+								<label for="admission-ward">Ward</label><br></span>
+		
+								<span><input type="number" id="admission-bed" name="bedNumber"><br>
+								<label for="admission-bed">Bed number</label><br></span>
+		
+								<span><input type="text" id="admission-specialist" name="specialist"><br>
+								<label for="admission-specialist">Specialist</label><br></span>
+							</section>
+
+							<fieldset class="date-photo">
+								<span><input type="date" name="admittedDate" id="date-admitted"><br>
+								<label for="date-admitted">Date Admitted</label></span><br>
+
+								<!--<span><input type="date" name="dischargedDate" id="date-discharged"><br>
+								<label for="date-discharged">Date Discharged</label></span><br>
+
+								<span><input type="time" name="dischargedTime" id="time-discharged"><br>
+								<label for="time-discharged">Time Discharged</label></span><br>-->
+							</fieldset>
+
+							<section class="ward-admission-section">
+								<textarea name="admissionDetail" class="text-area-full"></textarea>
+							</section>
+	
+							<span class="btn">
+								<input type="submit" name="submit" value="Submit">
+							</span>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+						<!--<textarea name="admissionDetail" style="grid-column : 2 / 9"></textarea>-->
+		</div>
+	</main>
+<%- include('partials/footer')%> 

@@ -1,0 +1,42 @@
+<%- include('partials/header') %>
+<%- include('partials/deleteSearch') %>
+			<!-- Tab content -->
+			<div class="updateTabcontent">
+				<h2>CHILD REFERRALS</h2>
+				<div class="visitors-content">
+					<table>
+						<thead>
+							<tr>
+								<th>No</th>
+								<th>Referred To</th>
+								<th>Referred From</th>
+								<th>Specialist</th>
+								<th>Date</th>
+								<th colspan="2">Action</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<% let num = 0 %>
+							<% referrals.forEach(referral => { %>
+								<tr>
+									<td><%- num += 1 %></td>
+									<td><%- referral.toClinic %></td>
+									<td><%- referral.fromClinic %></td>
+									<td><%- referral.referredTo %></td>
+									<td><%- referral.date.toLocaleString().substring(0, 10) %></td>
+									<td><a href="/referral/<%- referral._id%>/edit">Edit</a></td>
+									<td>
+										<form action="/referral/<%- referral._id %>?_method=DELETE" method="POST">
+											<button type="submit">Delete</button>
+										</form>
+									</td>
+								</tr>
+							<% }); %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

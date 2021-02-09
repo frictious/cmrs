@@ -1,0 +1,41 @@
+<%- include('partials/header') %>
+<%- include('partials/reportSearch') %>
+			<!-- Tab content -->
+			<div class="updateTabcontent">
+				<h2>CHILD TESTS RECORDS</h2>
+				<div class="visitors-content">
+					<table>
+						<thead>
+							<tr>
+								<th>No</th>
+								<th>Type</th>
+								<th>Requested By</th>
+								<th>Result</th>
+								<th colspan="3">Action</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<% let num = 0 %>
+							<% tests.forEach(test => { %>
+								<tr>
+									<td class="centered"><%- num += 1 %></td>
+									<td class="centered"><%- test.type %></td>
+									<td class="centered"><%- test.requestedBy %></td>
+									<td class="centered"><a href="/files/<%- test.labResult %>" target="_blank" download> Download File </a></td>
+									<td class="centered"><a href="/test/<%- test._id %>">View</a></td>
+									<td class="centered"><a href="/test/<%- test._id %>/edit">Edit</a></td>
+									<td class="centered">
+										<form action="/test/<%- test._id %>?_method=DELETE" method="POST">
+											<button type="submit">Delete</button>
+										</form>
+									</td>
+								</tr>
+							<% }); %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

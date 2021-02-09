@@ -1,0 +1,52 @@
+<%- include('partials/header') %>
+<%- include('partials/deleteSearch') %>
+			
+			<!-- Tab content -->
+			<div class="updateTabcontent">
+				<div id="admission-content">
+					<h2>ADMISSION DATA ENTRY</h2>
+					<form class="admission-form" action="/admission/<%- admission._id %>?_method=DELETE" method="POST">
+						<fieldset class="admission-fieldset">
+							<legend>DETAILS</legend>
+							<section class="inputs">
+								<span><input type="text" id="admissionID" value="<%-admission.admissionID%>" name="admissionID" readonly><br>
+								<label for="admissionID">Admission number</label></span>
+		
+								<span><input class="cls-cID" type="text" id="childID" name="childID" value="<%- admission.childID %>"><br>
+								<label class="cls-cID" for="childID">ChildID</label><br></span>
+								
+								<span><input type="text" id="admission-ward" name="ward" value="<%- admission.ward %>"><br>
+								<label for="admission-ward">Ward</label><br></span>
+		
+								<span><input type="number" id="admission-bed" name="bedNumber" value="<%- admission.bedNumber %>"><br>
+								<label for="admission-bed">Bed number</label><br></span>
+		
+								<span><input type="text" id="admission-specialist" name="specialist" value="<%- admission.specialist%>"><br>
+								<label for="admission-specialist">Specialist</label><br></span>
+							</section>
+
+							<fieldset class="date-photo">
+								<span><input type="date" name="admittedDate" id="date-admitted" value="<%- admission.admittedDate.toLocaleString().substring(0, 10) %>"><br>
+								<label for="date-admitted">Date Admitted</label></span><br>
+
+								<span><input type="date" name="dischargedDate" id="date-discharged" value="<%- admission.dischargedDate.toLocaleString().substring(0, 10) %>"><br>
+								<label for="date-discharged">Date Discharged</label></span><br>
+
+								<span><input type="time" name="dischargedTime" id="time-discharged" value=" <%- admission.dischargedTime %>"><br>
+								<label for="time-discharged">Time Discharged</label></span><br>
+							</fieldset>
+
+							<section class="ward-admission-section">
+								<textarea name="admissionDetail" class="text-area-full"><%- admission.admissionDetail %></textarea>
+							</section>
+	
+							<span class="btn">
+								<button type="submit">Delete</button>
+							</span>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

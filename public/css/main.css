@@ -1,0 +1,42 @@
+main{
+    width: 100%;
+    height: 550px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Aside section of the page */
+aside{
+    grid-column: 1 / 2;
+    background-color: brown;
+}
+
+aside ul{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+aside ul li{
+    width: 100%;
+}
+
+aside ul li a{
+    display: inline-block;
+    width: inherit;
+    padding: 15px;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+aside ul li a:hover{
+    background-color: #232323;
+    transition: 2s;
+}
+/* End of aside section of the page */
+
+/* Section area of the page */
+section{
+    grid-column: 2 / 5;
+    background-color: black;
+}
+/* End of section area of the page */

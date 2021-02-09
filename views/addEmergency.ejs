@@ -1,0 +1,54 @@
+<%- include('partials/header') %>
+<%- include('partials/data-entry') %>	
+			<!-- Tab content -->
+			<div class="tabcontent">
+				<div id="emergency-content">
+					<h2>EMERGENCY CASES</h2>
+					<form class="emergency-form" action="/emergency/add" method="POST">
+						<fieldset class="emergency-fieldset">
+							<legend>DETAILS</legend>
+							<section class="inputs-full">
+								<span><input type="text" id="emID" value=<%-`EM-${Date.now().toString().substring(6, 12)}`%> name="emergencyID" readonly><br>
+								<label for="emID">EmergencyID</label><br></span>
+							
+								<span><input class="cls-cID" type="text" id="childID" name="childID"><br>
+								<label class="cls-cID" for="childID">ChildID</label><br></span>
+		
+								<section id="em-reg-date">
+									<span><label>Date registered</label></span>
+									<span><input type="date" name="regDate"></span>
+								</section><br>
+							</section>
+
+							<section class="text-area-section">
+								<textarea class="text-area-full" placeholder="Emergency description here ..." name="emergencyDescription"></textarea>
+
+								<fieldset id="brought-by-info">
+									<span><input type="text" id="em-brought-by" name="broughtBy"><br>
+									<label for="em-brought-by">Brought by</label><br></span>
+		
+									<span><input type="text" id="em-bringer-number" name="bringersContact" placeholder="+232-12-123-456"><br>
+									<label for="em-bringer-number">Bringer's contact</label><br></span>
+		
+									<span><input type="text" id="em-relationship" name="relationship"><br>
+									<label for="em-relationship">Relationship to child</label><br></span>
+								</fieldset>
+							</section>
+	
+	
+							<span class="btn">
+								<input type="submit" name="submit" value="Submit">
+								<!--<input type="button" name="add" value="Add New">
+								<input type="button" name="delete" value="Delete">
+								<input type="button" name="last" value="Last">
+								<input type="button" name="first" value="First">
+								<input type="button" name="previous" value="Previous">
+								<input type="button" name="next" value="Next">-->
+							</span>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

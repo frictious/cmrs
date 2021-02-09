@@ -1,0 +1,34 @@
+<%- include('partials/header') %>
+<%- include('partials/data-entry') %>
+			<!-- Tab content -->
+			<div class="updateTabcontent">
+				<div id="visitors-content">
+					<h2>PRESCRIPTION</h2>
+					<form class="visitors-form" action="/prescription/<%- prescription._id %>/edit?_method=PUT" method="POST">
+						<fieldset class="visitors-fieldset">
+							<legend>DETAILS</legend>
+							<section class="inputs">
+								<span><input type="text" id="type" name="doneBy" value="<%- prescription.doneBy %>"><br>
+								<label for="type">Test Type</label><br></span>
+							
+								<span><input class="cls-cID" type="text" id="sickness" name="sickness" value="<%- prescription.sickness %>"><br>
+								<label class="cls-cID" for="hod">Sickness Name</label><br></span>
+	
+								<span><input type="text" id="childID" name="childID" value="<%- prescription.childID %>"><br>
+								<label for="childID">Child ID</label></span>
+							</section>
+
+							<section class="ward-admission-section">
+								<textarea name="precription" class="text-area-full"><%- prescription.precription %></textarea>
+							</section>
+	
+							<span class="btn">
+								<input type="submit" name="submit" value="Update">
+							</span>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

@@ -1,0 +1,41 @@
+<%- include('partials/header') %>
+<%- include('partials/data-entry') %>
+			<!-- Tab content -->
+			<div class="tabcontent">
+				<div id="referral-content">
+					<h2>REFERRAL</h2>
+					<form class="referral-form" action="/referral/add" method="POST">
+						<fieldset class="referral-fieldset">
+							<legend>DETAILS</legend>
+							<section class="inputs">
+								<span><input type="text" id="referral-number" name="referralID" value=<%-`RF-${Date.now().toString().substring(6, 12)}`%> readonly><br>
+								<label for="referral-number">Referral number</label><br></span>
+							
+								<span><input class="cls-cID" type="text" id="childID" name="childID"><br>
+								<label class="cls-cID" for="childID">ChildID</label><br></span>
+		
+								<span><input type="text" id="refer-to" name="referredTo" placeholder="Specialist Name"><br>
+								<label for="refer-to">Refer to</label></span><br>
+		
+								<span><input type="text" id="referral-from" name="fromClinic"><br>
+								<label for="referral-from">Referral from clinic</label></span>
+								
+								<span><input type="text" id="referral-to" name="toClinic"><br>
+								<label for="referral-to">Refer to clinic</label></span>
+							</section>
+
+							<fieldset class="date-photo">
+								<span><input type="date" id="date-referred" name="date"><br>
+								<label for="date-referred">Date referred</label><br></span>
+							</fieldset>
+	
+							<span class="btn">
+								<input type="submit" name="submit" value="Submit">
+							</span>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

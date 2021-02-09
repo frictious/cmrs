@@ -1,0 +1,64 @@
+<%- include('partials/header') %>
+<%- include('partials/viewSearch') %>
+			<!-- Tab content -->
+			<div class="updateTabcontent">
+				<div id="deceased-content">
+					<h2>DECEASED</h2>
+					<form class="deceased-form" action="/deceased/add" method="POST">
+						<fieldset class="deceased-fieldset">
+							<legend>DETAILS</legend>
+							<section class="inputs">
+								<span><input type="text" id="deceasedID" value="<%- deceased.deceasedID %>" readonly name="deceasedID"><br>
+								<label for="deceasedID">Deceased ID</label></span>
+		
+								<span><input class="cls-cID" type="text" id="childID" name="childID" value="<%- deceased.childId %>" readonly><br>
+								<label class="cls-cID" for="childID">Child ID</label><br></span><br>
+							
+								<span><input type="text" id="deceased-fname" name="firstName" value="<%- deceased.firstName %>" readonly><br>
+								<label for="deceased-fname">First name</label></span>
+		
+								<span><input type="text" id="deceased-mname" name="otherName" value="<%- deceased.otherName %>" readonly><br>
+								<label for="deceased-mname">Other name(s)</label></span>
+		
+								<span><input type="text" id="deceased-lname" name="lastName" value="<%- deceased.lastName %>" readonly><br>
+								<label for="deceased-lname">Last name</label></span><br>
+								
+								<span><input type="text" id="deceased-gender" name="gender" value="<%- deceased.gender %>" readonly><br>
+								<label for="deceased-gender">Gender</label></span>
+		
+								<span><input type="text" id="deceased-nationality" name="nationality" value="<%- deceased.nationality %>" readonly><br>
+								<label for="deceased-nationality">Nationality</label></span>
+					
+								<span><input type="text" id="deceased-tribe" name="tribe" value="<%- deceased.tribe %>" readonly><br>
+								<label for="deceased-tribe">Tribe</label></span><br>
+		
+								<span><input type="text" id="cause-of-death" name="causeOfDeath" value="<%- deceased.causeOfDeath %>" readonly><br>
+								<label for="cause-of-death">Cause of death</label></span>
+		
+								<span><input class="area-of-incident" type="text" id="area-of-incident" name="areaOfIncident" value="<%- deceased.areaOfIncident %>" readonly><br>
+								<label class="area-of-incident" for="area-of-incident">Area of incident</label></span><br>
+
+								<span><input type="text" id="reportedBy" name="reportedBy" value="<%- deceased.reportedBy %>" readonly><br>
+								<label for="reportedBy">Reported By</label></span>
+		
+								<span><input class="assumed-area-of-incident" type="text" id="assumed-area-of-incidence" name="assumedAreaOfIncident" value="<%- deceased.assumedAreaOfIncident %>" readonly><br>
+								<label class="assumed-area-of-incidence" for="assumed-area-of-incident">Assumed area of incidence</label></span>
+		
+								<span><input type="text" id="deceased-address" name="residenceAddress" value="<%- deceased.residenceAddress %>" readonly><br>
+								<label for="deceased-address">Residence address</label></span>
+							</section>
+
+							<fieldset class="date-photo">
+								<span><input type="text" id="date-of-death" name="date" value="<%- deceased.date.toString().substring(0, 15) %>" readonly><br>
+								<label for="date-of-death">Date of death</label></span>
+
+								<span><input type="text" id="time-of-death" name="timeOfDeath" value="<%- deceased.timeOfDeath %>" readonly><br>
+								<label for="time-of-death">Time of death</label></span>
+							</fieldset>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

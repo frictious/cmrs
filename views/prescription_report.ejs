@@ -1,0 +1,41 @@
+<%- include('partials/header') %>
+<%- include('partials/reportSearch') %>
+			<!-- Tab content -->
+			<div class="updateTabcontent">
+				<h2>CHILD PRESCRIPTION RECORDS</h2>
+				<div class="visitors-content">
+					<table>
+						<thead>
+							<tr>
+								<th>No</th>
+								<th>Done By</th>
+								<th>sickness</th>
+								<th>Prescription Date</th>
+								<th colspan="3">Action</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<% let num = 0 %>
+							<% prescriptions.forEach(prescription => { %>
+								<tr>
+									<td class="centered"><%- num += 1 %></td>
+									<td class="centered"><%- prescription.doneBy %></td>
+									<td class="centered"><%- prescription.sickness %></td>
+									<td class="centered"><%- prescription.created.toString().substring(0, 12) %></td>
+									<td class="centered"><a href="/prescription/<%- prescription._id %>">View</a></td>
+									<td class="centered"><a href="/prescription/<%- prescription._id %>/edit">Edit</a></td>
+									<td class="centered">
+										<form action="/prescription/<%- prescription._id %>?_method=DELETE" method="POST">
+											<button type="submit">Delete</button>
+										</form>
+									</td>
+								</tr>
+							<% }); %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

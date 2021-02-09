@@ -1,0 +1,67 @@
+<%- include('partials/header') %>
+<%- include('partials/reportSearch') %>
+		<!-- Tab content -->
+		<div class="birthCertificate">
+			<section class="report-header">
+				<div class="left">
+					<span>Serial No: <%- Date.now().toString().substring(8, 13) %></span>
+				</div>
+				<div class="center">
+					<span class="logo">
+						<img src="/images/SL_Coat2.png" alt="Sierra Leone Coat of Arms">
+					</span>
+					<div>Death Certificate No: <span class="birth-no"><%- Date.now().toString().substring(9, 11)%></span></div>
+				</div>
+				<div class="right">
+					<span>C.R FORM I.B. <%- Date.now().toString().substring(11, 12) %></span><br>
+					<span>Office of the Registrar</span><br>
+					<span>Ministry of Health and Sanitation</span><br>
+					<span>Sierra Leone</span>
+				</div>
+			</section>
+			<section class="report-body">
+				<p>
+					This is to certify that 
+						<input type="text" name="" value="<%- deceased.firstName %> <%- deceased.otherName %> <%- deceased.lastName %>" id="deceasedName" class="middle">,
+						a <%- deceased.gender %>
+				</p>
+				<p class="half space">
+					died on <input type="text" name="timeOfDeath" id="timeOfDeath" value="<%- deceased.date.toString().substring(0, 3) %>" class="left-half-date-day"> 
+					<input type="text" name="timeOfDeath" id="timeOfDeath" value="<%- deceased.date.toString().substring(4, 11) %>" class="left-half-date-month"> 
+					20<input type="text" name="timeOfDeath" id="timeOfDeath" value="<%- deceased.date.toString().substring(13, 16) %>" class="left-half-date-year"> 
+					at <input type="text" name="timeOfDeath" id="timeOfDeath" value="<%- deceased.timeOfDeath %>" class="left-half-date-time"> 
+				</p>
+				<!--<p class="full">
+					at <input type="text" name="fathersName" id="fathersName" class="left-half" value="<%- //deceased.timeOfDeath %>">
+				</p>-->
+				<p class="full space">
+					at <input type="text" name="placeOfDeath" value="<%- deceased.assumedAreaOfIncident %>" id="placeOfBirth" class="left-half"> Nationality <input type="text" name="nationality" value="<%- deceased.nationality %>" id="nationality" class="right-half">
+				</p>
+				<p class="space">
+					This event was registered at <input type="text" name="registrationCentre" id="" class="left-half-vol" value=" PCMH "> in Registry Volume No <input type="text" name="regVolNo" id="" class="right-half-vol-date" value="<%- (Date.now() * 5).toString().substring(8, 10) %>">
+				</p>
+				<p class="space">
+					<% let val = Date.now().toString().substring(9, 13) %>
+					<% let pageNo = 0 %>
+					<% pageNo = Math.floor(parseFloat(val) / 3) %>
+					Page No <input type="text" name="" id="" value="<%- pageNo.toString().substring(0, 2)  %>" class="left-half-vol"> of the Register of Deaths in the Republic of Sierra Leone <div class="space"> and the deceased usual place of residence was: 
+					<input type="text" name="" id="" value="<%- deceased.residenceAddress %>" class="right-half-vol"></div>
+				</p>
+				<p class="space">
+					<% let date = new Date().toString() %>
+					Witness my hand this <input type="text" name="" value="<%- new Date().getDate() %>" id="" class="left-half-vol-date"> day of <input type="text" value="<%- date.substring(4, 7) %>" name="" id="" class="right-half-vol"> 20 <input type="text" name="" value="<%- date.substring(13, 15) %>" id="" class="right-half-vol-last">
+				</p>
+			</section>
+			<section class="report-footer space">
+				<p class="left">
+					<input type="text" name="" id="" class=""><br>
+					<span>Official</span>
+				</p>
+				<p class="right">
+					<input type="text" name="" id="" class=""><br>
+					<span>Chief Registrar</span>
+				</p>
+			</section>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

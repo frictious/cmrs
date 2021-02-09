@@ -1,0 +1,74 @@
+<%- include('partials/header') %>
+<%- include('partials/editSearch') %>
+			
+			<!-- Tab content -->
+			<div class="updateTabcontent">
+				<div id="child-content">
+					<h2 id="child">CHILD DATA ENTRY</h2>
+					<form action="/child/<%- child._id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data" class="child-form">
+						<fieldset class ="child-fieldset">
+							<legend>DETAILS</legend>
+							
+							<section class="inputs">
+								<span><input class="cls-cID" type="text"  name="childID" id="childID" value="<%- child.childID %>" readonly><br>
+								<label class="cls-cID" for="childID">ChildID</label><br></span>
+		
+								<br><span id="sp2-fname"><input class="cls-fname" type="text" id="firstname" name="firstName" value="<%- child.firstName %>"><br>
+								<label class="cls-fname" for="firstname">First name</label><br></span>
+								
+								<span id="sp3-mname"><input class="cls-mname" type="text" id="middlename" value="<%- child.otherName %>" name="otherName"><br>
+								<label class="cls-mname" name="otherName" for="middlename">Other name(s)</label><br></span>
+								
+								<span id="sp4-lname"><input class="cls-lname" type="text" id="lastname" name="lastName" value="<%- child.lastName %>"><br>
+								<label class="cls-lname" for="lastname">Last name</label><br></span>
+		
+								<span id="sp5-gender"><input class="cls-gender" type="text" id="gender" name="gender" value="<%- child.gender %>"><br>
+								<label class="cls-gender" for="sex">Gender</label><br></span>
+		
+								<span id="sp9-nationality"><input class="cls-nationality" type="text" id="nationality" name="nationality" value="<%- child.nationality %>"><br>
+								<label class="cls-nationality" for="nationality">Nationality</label><br></span>
+		
+								<span><input type="text" id="child-tribe" name="ethnicity" value="<%- child.ethnicity %>"><br>
+								<label for="child-tribe">Tribe</label><br></span>
+		
+								<span id="sp10-religion"><input class="cls-religion" type="text" id="religion" name="religion" value="<%- child.religion %>"><br>
+								<label class="cls-religion" for="religion">Religion</label><br></span>
+		
+								<span id="registration-type"><input class="cls-registration-type" type="text" id="registration-type" name="registrationType" value="<%- child.registrationType %>"><br>
+								<label class="cls-registration-type" for="registration-type">Registration type<br></span>
+									
+								<span id="sp6-address"><input class="cls-address" type="text" id="c-address" name="address" value="<%- child.address %>"><br>
+								<label class="cls-address" for="address">Residence address</label></span>
+							</section>
+
+							<fieldset class="date-photo">
+								<section>
+									<section class="reg-date">
+										<label>Reg date</label>
+										<input type="text" name="regDate" value="<%- child.regDate.toLocaleString().substring(0, 10) %>">
+									</section><br>
+		
+									<section class="DOB">
+										<label>Date of birth</label>
+										<input type="text" name="dob" value="<%- child.dob %>">
+									</section><br>
+		
+									<section id="photo">
+										<img src="/files/<%- child.photo %>">
+										<input id="c-browse-btn" type="file" value="Browse" name="photo">
+									</section>
+
+									<a href="/snap" class="webcam"> <img src="/images/camera.png" alt="">Take Picture</a>
+								</section>
+							</fieldset>
+							
+							<span class="btn">
+								<input type="submit" name="submit" value="Update">
+							</span>	
+						</fieldset>
+					</form>
+				</div>	
+			</div>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

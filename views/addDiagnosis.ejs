@@ -1,0 +1,38 @@
+<%- include('partials/header') %>
+<%- include('partials/data-entry') %>
+			<!-- Tab content -->
+			<div class="tabcontent">
+				<div id="visitors-content">
+					<h2>DIAGNOSIS</h2>
+					<form class="visitors-form" action="/prescription/add" method="POST">
+						<fieldset class="visitors-fieldset">
+							<legend>DETAILS</legend>
+							<section class="inputs">
+								<span><input type="text" id="doneBy" name="diagnosedBy" value="<%- user.name %>" readonly><br>
+								<label for="doneBy">Diagnosed By</label></span>
+
+								<span><input type="text" id="childID" name="childID"><br>
+								<label for="childID">Child ID</label></span>
+								
+								<!--<span><input type="text" id="type" name="doneBy"><br>
+								<label for="type">Test Type</label><br></span>-->
+							
+								<!--<span><input class="cls-cID" type="text" id="sickness" name="sickness"><br>
+								<label class="cls-cID" for="hod">Sickness Name</label><br></span>-->
+	
+							</section>
+
+							<section class="ward-admission-section">
+								<textarea name="diagnosis" class="text-area-full" placeholder="Enter diagnosis information here..."></textarea>
+							</section>
+	
+							<span class="btn">
+								<input type="submit" name="submit" value="Submit">
+							</span>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

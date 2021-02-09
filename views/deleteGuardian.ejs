@@ -1,0 +1,80 @@
+<%- include('partials/header') %>
+<%- include('partials/deleteSearch') %>
+			
+			<!-- Tab content -->
+			<div class="updateTabcontent">
+				<div id="guardian-content">
+					<h2>GUARDIAN DATA ENTRY</h2>
+					<form class="guardian-form" action="/guardian/<%- guardian._id %>?_method=DELETE" method="POST" enctype="multipart/form-data">
+						<fieldset class="guardian-fieldset">
+							<legend>DETAILS</legend>
+							<section class="inputs">
+								<span><input type="text" id="gID" name="guardianID" value="<%- guardian.guardianID%>"><br>
+								<label for="gID">GuardianID</label><br></span>
+
+								<span id="registration-number"><input type="text" id="registration-number" name="childID" value="<%- guardian.childID%>" readonly><br>
+								<label class="cls-registration-number" for="childID">Child ID</span><br>
+							
+								<span><input type="text" id="g-fname" name="firstName" value="<%- guardian.firstName %>"><br>
+								<label for="g-fname">First name</label></span>
+		
+								<span><input type="text" id="g-mname" name="otherName" value="<%- guardian.otherName %>"><br>
+								<label for="g-mname">Other name(s)</label><br></span>
+		
+								<span><input type="text" id="g-lname" name="lastName" value="<%- guardian.lastName %>"><br>
+								<label for="g-lname">Last name</label><br></span>
+								
+								<span><input type="text" id="g-gender" name="gender" value="<%- guardian.gender %>"><br>
+								<label for="g-gender">Gender</label><br></span>
+		
+								<span><input type="text" id="g-nationality" name="nationality" value="<%- guardian.nationality %>"><br>
+								<label for="g-nationality">Nationality</label><br></span>
+					
+								<span><input type="text" id="g-marital-status" name="maritalStatus" value="<%- guardian.maritalStatus %>"><br>
+								<label for="g-marital-status">Marital status</label><br></span>
+		
+								<span><input type="text" id="g-occupation" name="occupation" value="<%- guardian.occupation %>"><br>
+								<label for="g-occupation">Occupation</label><br></span>
+		
+								<span><input type="text" id="g-edu-status" name="educationalLevel" value="<%- guardian.educationalLevel %>"><br>
+								<label for="g-edu-status">Educational level</label><br></span>
+		
+								<span><input type="text" id="g-number-of-children" name="noOfChildren" value="<%- guardian.noOfChildren %>"><br>
+								<label for="g-number-of-children">No. of children</label><br></span>
+		
+								<span><input type="text" id="g-contact-number" name="contact" value="<%- guardian.contact %>"><br>
+								<label for="g-contact-number">Contact number(s)</label><br></span>
+		
+								<span><input type="text" id="g-address" name="address" value="<%- guardian.address %>"><br>
+								<label for="g-address">Residence address</label><br></span>
+							</section>
+
+							<fieldset class="date-photo">
+								<section>
+									<section class="reg-date">
+										<label>Reg date</label>
+										<input type="text" name="regDate" value="<%- guardian.regDate %>">
+									</section><br>
+		
+									<section class="DOB">
+										<label>Date of birth</label>
+										<input type="text" name="dob" value="<%- guardian.dob %>">
+									</section><br>
+		
+									<section id="photo">
+										<img src="/files/<%- guardian.photo %>">
+										<input id="g-browse-btn" type="file" name="photo" value="Browse">
+									</section>
+								</section>
+							</fieldset>
+	
+							<span class="btn">
+								<input type="submit" name="submit" value="Delete">
+							</span>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+<%- include('partials/viewSearch') %>
+			<!-- Tab content -->
+			<div class="updateTabcontent">
+				<div id="visitors-content">
+					<h2>VISITORS</h2>
+					<form class="visitors-form" action="/visitors/add" method="POST">
+						<fieldset class="visitors-fieldset">
+							<legend>DETAILS</legend>
+							<section class="inputs">
+								<span><input type="text" id="visitorsID" value="<%- visitors.visitorsID %>" name="visitorsID" readonly><br>
+								<label for="visitorsID">Visitor ID</label><br></span>
+							
+								<span><input class="cls-cID" type="text" id="childID" name="childID" value="<%- visitors.childID %>" readonly><br>
+								<label class="cls-cID" for="childID">Child ID</label><br></span>
+	
+								<span><input type="text" id="visitors" name="name" value="<%- visitors.name %>" readonly><br>
+								<label for="visitors">Visitors Name</label></span>
+
+								<span><input type="text" id="visitors-purpose" name="purpose" value="<%- visitors.purpose %>" readonly><br>
+								<label for="visitors-purpose">Purpose</label></span><br>
+	
+							</section>
+
+							<section class="date-photo">
+								<span><input type="text" id="visitors-date" name="visitDate" value="<%- visitors.date.toLocaleString().substring(0, 10) %>" readonly></span><br>
+								<span><label for="visit-date">Date</label></span>
+							</section>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

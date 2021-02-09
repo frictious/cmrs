@@ -1,0 +1,1023 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background: rgba(255, 255, 255, 0.9);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Header section */
+.header {
+    font-size: 25px;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 12px;
+    background: rgba(20, 35, 20, 0.9);
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-gap: 20px;
+    box-sizing: border-box;
+}
+
+.header span {
+    grid-column: 1 / 2;
+}
+
+.header #app-heading {
+    grid-column: 2 / 9;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 60px;
+}
+
+.header div.user {
+    grid-column: 9 / 10;
+    line-height: 60px;
+}
+
+.header div.user a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.success-message{
+    width: 90%;
+    margin: 0px auto;
+    background-color: rgb(0, 128, 0);
+    color: #ccc;
+    font-size: 1.3em;
+}
+
+.error-message{
+    width: 90%;
+    margin: 0px auto;
+    background-color: rgb(128, 0, 0);
+    color: #ccc;
+    font-size: 1.3em;
+}
+/* End of header section */
+
+/* Tabs section */
+.tabs, .tabcontent div{
+    text-align: center;
+    padding: 70px;
+    font-size: 30px;
+}
+
+.tabs {
+    padding: 10px 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 20px;
+    box-sizing: border-box;
+}
+
+.tabs div{
+    grid-column: 1 / 2;
+}
+
+/* Side nav */
+.tabs div ul{
+    display: block;
+    width: 100%;
+}
+
+.tabs div ul li{
+    list-style: none;
+    width: 100%;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.tabs div ul li a{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    color: #918e8ee7;
+    font-weight: 700;
+    font-size: 24px;
+    border-left: 5px solid #dcdcdc;
+    transition: 2s ease;
+    text-align: left;
+    text-decoration: none;
+}
+
+.tabs a:hover {
+    color: #404040;
+    border-left: 5px solid #404040;
+}
+
+.tabs a.visited:visited{
+    color: #404040;
+    border-left: 5px solid #404040;
+}
+
+/* End of side nav */
+
+.tabs .tabcontent{
+    grid-column: 2 / 9;
+    /* border: 1px solid brown; */
+}
+/* 
+.tabs input[type="radio"] {
+    display: none;
+}     */
+
+/* label {
+    font-weight: bold;
+} */
+
+/* .tabs input:checked+label {
+    color: #404040;
+    border-left: 5px solid rgba(20, 120, 20, 0.9);
+} */
+
+/* .tabs .tabcontent {
+    position: absolute;
+    top: 8px;
+    margin-left: 177px;
+    align-self: center;
+    width: 1220px;
+} */
+
+.tabs .tabcontent div {
+    /* display: none; */
+    color: rgb(248, 235, 220);
+    background: rgba(20, 35, 20, 0.9);
+    height: 100%;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+/* End of tabs section */
+
+#child-content, 
+#father-content, 
+#mother-content,
+#guardian-content,
+#admission-content, 
+#emergency-content, 
+#waiting-content, 
+#visitors-content,
+#referral-content,
+#delivery-content, 
+#deceased-content {
+    text-align: left;
+    padding: 5px;
+    font-size: 15px;
+}
+
+/* Dashboard Section */
+#dashboard-content{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.dashboard-form{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
+.dashboard-form input[type="button"]{
+    cursor: pointer;
+    /* border: none; */
+    background: transparent;
+}
+
+.dashboard-form fieldset{
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, minmax(200px, auto));
+    grid-gap: 10px;
+    justify-content: center;
+}
+
+
+/* End of dashboard section */
+
+h2 {
+    text-align: center;
+}
+
+form {
+    background: rgba(25, 30, 20, 0.9);
+    min-height: 90%;
+    box-sizing: border-box;
+}
+
+.child-fieldset, 
+.father-fieldset, 
+.mother-fieldset,
+.guardian-fieldset,
+.admission-fieldset,
+.emergency-fieldset,
+.waiting-fieldset,
+.visitors-fieldset,
+.referral-fieldset,
+.delivery-fieldset,
+.deceased-fieldset,
+.dashboard-fieldset {
+    /* height: 88%; */
+    /* padding: 15px; */
+    /* margin-left: 1%;
+    margin-right: 1%; */
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* 
+#ward-detail-fieldset {
+    grid-column: 1 / 2;
+}
+
+#admission-detail-fieldset {
+    grid-column: 2 / 3;
+} */
+
+#admission-detail,
+.text-area{
+    font-size: 17px;
+}
+
+.text-area {
+    display: block;
+    width: 420px;
+    height: 200px;
+    /* margin-right: #95px; */
+}
+
+#admission-legend,
+#ward-legend {
+    text-align: center;
+}
+
+#admission-ward,
+#admission-bed,
+#admission-specialist {
+    width: 210px;
+}
+
+.child-fieldset input, 
+.father-fieldset input, 
+.mother-fieldset input,
+.guardian-fieldset input,
+.admission-fieldset input,
+.emergency-fieldset input,
+.waiting-fieldset input,
+.visitors-fieldset input,
+.referral-fieldset input,
+.delivery-fieldset input,
+.deceased-fieldset input {
+    padding: 4px;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.child-fieldset label, 
+.father-fieldset label, 
+.mother-fieldset label,
+.guardian-fieldset label,
+.admission-fieldset label,
+.emergency-fieldset label,
+.waiting-fieldset label,
+.visitors-fieldset label,
+.referral-fieldset label,
+.delivery-fieldset label,
+.deceased-fieldset label {
+    font-weight: bold;
+}
+
+.child-fieldset span, 
+.father-fieldset span, 
+.mother-fieldset span,
+.guardian-fieldset span,
+.admission-fieldset span,
+.emergency-fieldset span,
+.waiting-fieldset span,
+.visitors-fieldset span,
+.referral-fieldset span,
+.delivery-fieldset span,
+.deceased-fieldset span {
+    display: inline-block;
+}
+
+legend {
+    font-weight: bolder;
+    margin-top: 50px;
+}
+
+.update-legend{
+    margin-top: 5px !important;
+}
+
+#ward-detail-fieldset legend,
+#admission-legend{
+    margin-top: 10px !important;
+}
+
+.text-area{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+#c-photo,
+#f-photo, 
+#m-photo, 
+#g-photo {
+    width: 100px;
+    margin-top: 6px;
+}
+
+#photo img, 
+#photo img, 
+#photo img, 
+#photo img {
+    height: 185px;
+    width: 270px;
+    /* float: right; */
+}
+
+#photo input, 
+#photo input, 
+#photo input, 
+#photo input {
+    width: 206px;
+    /* float: right; */
+}
+
+/* .child-btn {
+    margin-left: 235px;
+    margin-top: 110px;
+} */
+
+/* .child-btn input {
+    width: 75px;
+    font-size: 15px;
+} */
+
+/* .father-btn, 
+.mother-btn,
+.guardian-btn,
+.ward-btn,
+.referral-btn,
+.delivery-btn,
+.deceased-btn {
+    margin-left: 240px;
+    margin-top: 60px;
+} */
+
+/* .admission-btn {
+    margin-top: 25px;
+    margin-left: 290px;
+} */
+
+/* .emergency-btn {
+    width: 100%;
+    text-align: center;
+    margin-left: 560px;
+} */
+
+.btn {
+    /* width: 100%; */
+    grid-column: 1 / 6;
+    text-align: center;
+    /* margin-left: 560px; */
+}
+
+/* .waiting-btn {
+    margin-top: 350px;
+    margin-left: 450px;
+    display: inline-block;
+} */
+
+/* .appointment-btn,
+.referral-btn,
+.delivery-btn {
+    margin-top: 60px;
+    margin-left: 300px;
+}
+
+#delivery-btn {
+    margin-top: 100px;
+} */
+
+/* .referral-btn {
+    margin-top: 80px;
+} */
+
+#refer-to,
+#referral-from,
+#referral-to {
+    width: 297px;
+}
+
+.father-btn input, 
+.mother-btn input,
+.guardian-btn input,
+.admission-btn input,
+.ward-btn input,
+.emergency-btn input,
+.waiting-btn input,
+.visitors-btn input,
+.referral-btn input,
+.delivery-btn input,
+.deceased-btn input {
+    width: 75px;
+    font-size: 15px;
+}
+
+.child-btn input:hover, 
+.father-btn input:hover, 
+.mother-btn input:hover,
+.guardian-btn input:hover,
+.admission-btn input:hover,
+.ward-btn input:hover,
+.emergency-btn input:hover,
+.waiting-btn input:hover,
+.visitors-btn input:hover,
+.referral-btn input:hover,
+.delivery-btn input:hover,
+.deceased-btn input:hover {
+    cursor: pointer;
+}
+
+/* Text-area section */
+.text-area-section{
+    grid-column: 1 / 6;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    box-sizing: border-box;
+}
+
+#brought-by-info input {
+    width: 200px;
+}
+
+.text-area-full{
+    width:90%;
+    height: 250px;
+    font-size: 20px;
+    margin: 0px auto;
+    margin-top: 10px;
+    resize: none;
+    grid-column: 1 / 3;
+    display: block;
+}
+
+.ward-admission-section {
+    grid-column: 1 / 6;
+    display: block;
+    padding: 0px;
+    margin: 0px;
+    height: 250px;
+    width: 95%;
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    box-sizing: border-box;
+}
+
+.ward-admission-section textarea{
+    display: block;
+}
+/* End of text-area section */
+ 
+/* Child date of birth and image area */
+.child-fieldset,
+.father-fieldset,
+.mother-fieldset,
+.guardian-fieldset,
+.admission-fieldset,
+.emergency-fieldset,
+.waiting-fieldset,
+.visitors-fieldset,
+.referral-fieldset,
+.delivery-fieldset,
+.deceased-fieldset{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    box-sizing: border-box;
+}
+
+.inputs{
+    grid-column: 1 / 5;
+}
+
+.inputs-full{
+    grid-column: 1 / 6;
+}
+
+.date-photo{
+    grid-column: 5 / 6;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    /* grid-gap: 10px; */
+}
+
+.date-photo .reg-date,
+.date-photo .DOB,
+.date-photo #photo{
+    grid-column: 1 / 2;
+    /* padding: 10px; */
+}
+
+/* .reg-date,
+.DOB,
+#photo{
+    border: 1px solid brown;
+    grid-column: 1 / 3;
+    width: 100%;
+} */
+
+/* .c-date-photo,
+.f-date-photo,
+.m-date-photo,
+.g-date-photo,
+.wait-date {
+float: right;
+} */
+
+
+#c-address,
+#f-address, 
+#m-address,
+#g-address,
+#f-contact-number,
+#m-contact-number,
+#g-contact-number {
+    width: 399px;
+}
+
+#childID,
+#fID, 
+#mID,
+#gID {
+    width: 110px;
+}
+
+#child-browse-btn:hover, 
+#f-browse-btn:hover, 
+#m-browse-btn:hover,
+#g-browse-btn:hover {
+    cursor: pointer;
+}
+
+#em-reg-date {
+    float: right;
+    display: block;
+}
+
+ #dashboard-controls {
+    grid-column: 1 / 3;
+    width: 90%;
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 20px;
+    margin-top: 6%;
+ }
+
+ #dashboard-controls img {
+    width: 100%;
+    height: 150px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+ }
+
+ #dashboard-controls input {
+    width: 100%;
+    height: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Times New Roman;
+    color: rgba(30, 40, 20, 0.9);
+ }
+
+ #dashboard-controls section {
+    background: #fff;
+ }
+
+ #user-profile,
+ #input-forms,
+ #add-user,
+ #reports,
+ #search-form {
+    border: 1px solid #ccc;
+    margin-right: 8px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+ }
+
+ #assumed-area-of-incidence {
+    width: 220px;
+ }
+
+ #deceased-address {
+    width: 307px;
+ }
+
+ .deceased-btn {
+    margin-left: 300px;
+    margin-top: 40px;
+ }
+
+/* Form Section */
+main{
+    width: 100%;
+}
+
+main form.user-form{
+    width: 25%;
+    margin: 0px auto;
+    margin-top: 100px;
+    /* height: 300px; */
+    background: none !important;
+    box-shadow: 5px 10px 15px 15px gray;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+main form.user-form label{
+    display: block;
+    margin: 5px 0px 5px 5px;
+}
+
+main form.user-form .form-title{
+    margin-bottom: 40px;
+}
+
+main form.user-form input, select{
+    display: block;
+    padding: 5px;
+    margin: 10px 0px 0px 0px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    /* background: transparent; */
+    outline: none;
+    /* position: relative; */
+}
+
+main form.user-form .view-pass{
+    position: relative;
+}
+
+.view-pass input[type="checkbox"]{
+    position: absolute;
+    top: 0px;
+    right: -40%;
+    border: 1px solid yellow;
+}
+
+main form.user-form button{
+    /* display: block; */
+    margin-top: 20px;
+    padding: 10px;
+    outline: none;
+    text-align: center;
+    background: transparent;
+    border: none;
+    width: 100px;
+    height: 40px;
+    background-color: rgba(30, 40, 20, 0.9);
+    color: #fff;
+}
+
+/* Search form */
+.search-form{
+    width: 50%;
+    margin: 5px auto;
+    padding: 5px;
+}
+
+.search-form select{
+    display: inline;
+    width: 30%;
+    background: transparent;
+    color: #ccc;
+}
+
+.search-form input{
+    outline: none;
+    font-size: 20px;
+}
+
+.search-form button{
+    font-size: 20px;
+}
+/* End of search form */
+
+/* Update section */
+.updateTabcontent{
+    width: 90%;
+    margin: 0px auto;
+    color: #ccc;
+}
+
+.updateTabcontent h2{
+    color: #111 !important;
+}
+/* End of update section */
+/* End of form section */
+
+/* About section */
+div.about{
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(30, 40, 20, 0.9);
+    color: #dcdcdc;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+div.about p{
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+/* End of about section */
+
+/* Visitors table section */
+.visitors-content{
+    width: 90%;
+    margin: 0px auto;
+    background-color: rgba(20, 35, 20, 0.9);
+    padding: 10px;
+    min-height: 500px;
+    margin-bottom: 10px;
+}
+
+table{
+    display: block;
+    min-width: 500px;
+    text-align: center;
+    font-size: 1.2em;
+    margin: 0px auto;
+    width: 70%;
+    border-collapse: collapse;
+    color: #ccc !important;
+}
+
+tbody tr, th{
+    border-bottom: 1px solid #ccc;
+}
+
+table thead th,
+table tbody td{
+    padding: 12px 15px;
+}
+
+table tbody td{
+    text-align: left;
+}
+
+table tbody td a{
+    text-decoration: none;
+    color: #ccc;
+}
+/* End of visitors table section */
+
+/* Report section */
+div.birthCertificate{
+    width: 80%;
+    margin: 0px auto;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    background-color: rgb(236, 236, 236);
+    color: #111;
+    font-size: 20px;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+.birthCertificate .report-header{
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    margin-bottom: 30px;
+}
+
+.report-header .left{
+    grid-column: 1 / 2;
+}
+
+.report-header .center{
+    grid-column: 2 / 5;
+    text-align: center;
+}
+
+.report-header .center img{
+    width: 40%;
+    margin: 0px auto;
+    height: 100px;
+}
+
+.report-header .right{
+    grid-column: 5 / 6;
+    font-size: .7em !important;
+    text-align: right;
+}
+
+.birthCertificate input{
+    outline: none;
+    border: none;
+    border-bottom: 1px dotted #111;
+    background: transparent;
+    color: rgb(192, 158, 46);
+    font-size: 20px;
+    text-indent: 50px;
+}
+
+.birthCertificate input.middle{
+    min-width: 650px;
+}
+
+.birthCertificate input.right-half{
+    min-width: 380px;
+}
+
+.birthCertificate input.left-half{
+    min-width: 400px;
+}
+
+.birthCertificate input.left-half-vol{
+    min-width: 150px !important;
+}
+
+.birthCertificate input.left-half-vol-date{
+    max-width: 100px !important;
+}
+
+.birthCertificate input.right-half-vol-date{
+    max-width: 120px !important;
+}
+
+.birthCertificate input.left-half-date-day{
+    max-width: 200px;
+}
+
+.birthCertificate input.left-half-date-month{
+    max-width: 200px;
+}
+
+.birthCertificate input.left-half-date-year{
+    max-width: 200px;
+}
+
+.birthCertificate input.left-half-date-time{
+    max-width: 200px;
+}
+
+.birthCertificate .space{
+    margin-top: 70px;
+}
+
+.right-half-vol-last{
+    max-width: 200px;
+}
+
+.birthCertificate input.full{
+    min-width: 950px;
+}
+
+.birthCertificate .report-body{
+    grid-column: 1 / 3;
+}
+
+.birthCertificate .report-body .full{
+    grid-column: 1 / 3;
+}
+
+.birthCertificate .report-body p{
+    margin-bottom: 25px;
+}
+
+.report-footer{
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.report-footer .left{
+    grid-column: 1 / 2;
+}
+
+.report-footer .right{
+    grid-column: 4 / 5;
+}
+/* End of report section */
+
+/* Centered text */
+.centered{
+    text-align: center;
+}
+/* End of centered text */
+
+/* Project Section */
+.project{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    color: #404040;
+}
+
+.project .heading{
+    grid-column: 1 / 4;
+    justify-content: center;
+    color: #ccc;
+}
+
+.project .card{
+    width: 90%;
+    margin: 0px auto;
+    min-height: 200px;
+    background-color: #ccc;
+    /* padding: 10px; */
+    box-sizing: border-box;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow: hidden;
+}
+
+/* Webcam style */
+.webcam{
+    font-size: 30px;
+}
+
+a.webcam{
+    text-decoration: none;
+    color: #ccc;
+}
+/* End of webcam style */
+
+.about{
+    width: inherit;
+}
+
+.about .img{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    /* border: 1px solid #dcdcdc; */
+}
+
+.about img{
+    width: 100%;
+    height: 300px;
+    margin-bottom: 10px;
+    /* position: relative; */
+}
+
+.about img:hover{
+    scale: 1.5;
+    transition: .5s ease-in-out;
+
+}
+
+.about .name{
+    font-size: 20px;
+}
+/* About Section */
+
+/* Footer section */
+.footer{
+    width: 100%;
+    text-align: center;
+    background-color: rgba(25, 30, 20, 0.9);
+    color: #ccc;
+    height: 50px;
+    line-height: 50px;
+}
+
+.footer a{
+    color: #ccc;
+    text-decoration: none;
+}
+/* Footer Section */

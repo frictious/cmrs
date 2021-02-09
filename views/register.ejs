@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+		</div>
+	</div>
+	
+	<main>
+		<form action="/register" method="POST" class="user-form">
+			<h2 class="form-title">Sign Up</h2>
+			<input type="text" name="name" placeholder="Name">
+			<label for="role">Role: 
+				<select name="role" id="role">
+					<option value="Admin">Admin</option>
+					<option value="Matron">Matron</option>
+				</select>
+			</label>
+			<label for="email">
+				<input type="text" name="email" placeholder="Email">
+			</label>
+			<label for="password" class="view-pass">
+				<input type="password" name="password" placeholder="Password">
+				<input type="checkbox" id="passwordCheckbox">
+			</label>
+			<label for="rePassword" class="view-pass">
+				<input type="password" name="rePassword" placeholder="Retype Password">
+				<input type="checkbox" id="rePasswordCheckbox">
+			</label>
+			<button>Sign Up</button>
+		</form>
+	</main>
+<%- include ('partials/footer') %>

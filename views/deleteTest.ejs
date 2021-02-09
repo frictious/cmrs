@@ -1,0 +1,39 @@
+<%- include('partials/header') %>
+<%- include('partials/deleteSearch') %>
+			<!-- Tab content -->
+			<div class="tabcontent">
+				<div id="visitors-content">
+					<h2>TEST</h2>
+					<form class="visitors-form" action="/test/<%- test._id %>?_method=DELETE" method="POST">
+						<fieldset class="visitors-fieldset">
+							<legend>DETAILS</legend>
+							<section class="inputs">
+								<span><input type="text" id="type" name="type" value="<%- test.type %>"><br>
+								<label for="type">Test Type</label><br></span>
+							
+								<span><input class="cls-cID" type="text" id="requestedBy" name="requestedBy" value="<%- test.requestedBy %>"><br>
+								<label class="cls-cID" for="hod">Requested By</label><br></span>
+	
+								<span><input type="text" id="childID" name="childID" value="<%- test.childID %>"><br>
+								<label for="childID">Child ID</label></span>
+							</section>
+
+							<fieldset class="date-photo">
+								<section>
+									<section id="photo">
+										<img src="/files/<%- test.labResult %>">
+										<input id="c-browse-btn" type="file" value="Browse" name="labResult">
+									</section>
+								</section>
+							</fieldset>
+	
+							<span class="btn">
+								<input type="submit" name="submit" value="Delete">
+							</span>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

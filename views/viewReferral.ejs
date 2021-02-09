@@ -1,0 +1,37 @@
+<%- include('partials/header') %>
+<%- include('partials/viewSearch') %>
+			<!-- Tab content -->
+			<div class="updateTabcontent">
+				<div id="referral-content">
+					<h2>REFERRAL</h2>
+					<form class="referral-form">
+						<fieldset class="referral-fieldset">
+							<legend>DETAILS</legend>
+							<section class="inputs">
+								<span><input type="text" id="referral-number" name="referralID" value="<%- referral.referralID %>" readonly><br>
+								<label for="referral-number">Referral number</label><br></span>
+							
+								<span><input class="cls-cID" type="text" id="childID" name="childID" value="<%- referral.childID %>" readonly><br>
+								<label class="cls-cID" for="childID">ChildID</label><br></span>
+		
+								<span><input type="text" id="refer-to" name="referredTo" placeholder="Specialist Name" value="<%- referral.referredTo %>" readonly><br>
+								<label for="refer-to">Refer to</label></span><br>
+		
+								<span><input type="text" id="referral-from" name="fromClinic" value="<%- referral.fromClinic %>" readonly><br>
+								<label for="referral-from">Referral from clinic</label></span>
+								
+								<span><input type="text" id="referral-to" name="toClinic" value="<%- referral.toClinic %>" readonly><br>
+								<label for="referral-to">Refer to clinic</label></span>
+							</section>
+
+							<fieldset class="date-photo">
+								<span><input type="text" id="date-referred" name="date" value="<%- referral.date %>" readonly><br>
+								<label for="date-referred">Date referred</label><br></span>
+							</fieldset>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

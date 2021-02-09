@@ -1,0 +1,24 @@
+	<main>
+		<div class="tabs">
+			<div>
+				<!-- Tabs -->
+				<ul>
+					<li><a href="/child/add">Child</a></li>
+					<li><a href="/father/add">Father</a></li>
+					<li><a href="/mother/add">Mother</a></li>
+					<li><a href="/guardian/add">Guardian</a></li>
+					<li><a href="/admission/add">Admission</a></li>
+					<li><a href="/emergency/add">Emergency</a></li>
+					<li><a href="/waiting/add">Waiting</a></li>
+					<li><a href="/visitors/add">Visitors</a></li>
+					<li><a href="/referral/add">Referral</a></li>
+					<li><a href="/delivery/add">Delivery</a></li>
+					<li><a href="/deceased/add">Deceased</a></li>
+					<% if(user.role === "Admin") { %>
+						<li><a href="/test/add">Test</a></li>
+						<li><a href="/prescription/add">Prescription</a></li>
+						<li><a href="/diagnosis/add">Diagnosis</a></li>
+						<!--<li><a href="/deceased/add">Deceased</a></li>-->
+					<% } %>
+				</ul>
+			</div>

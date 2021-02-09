@@ -1,0 +1,33 @@
+<%- include('partials/header') %>
+		</div>
+	</div>
+	
+	<main>
+		<form action="/profile/<%- admin._id %>?_method=PUT" method="POST" class="user-form">
+			<h2 class="form-title">Profile</h2>
+			<label for="name">
+				<input type="text" name="name" value="<%- admin.name%>" id="name">
+			</label>
+			<% if(admin.role === "Admin"){%>
+				<label for="role">Role: 
+					<select name="role" id="role">
+						<option value="Admin">Admin</option>
+						<option value="Matron">Matron</option>
+					</select>
+				</label>
+			<%}%>
+			<label for="email">
+				<input type="text" name="email" value="<%- admin.email %>">
+			</label>
+			<label for="password" class="view-pass">
+				<input type="password" name="password" placeholder="Password" value="">
+				<!--<input type="checkbox" id="passwordCheckbox">-->
+			</label>
+			<label for="rePassword" class="view-pass">
+				<input type="password" name="rePassword" placeholder="Retype Password">
+				<!--<input type="checkbox" id="rePasswordCheckbox">-->
+			</label>
+			<button>Update</button>
+		</form>
+	</main>
+<%- include ('partials/footer') %>

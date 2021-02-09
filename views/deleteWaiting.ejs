@@ -1,0 +1,42 @@
+<%- include('partials/header') %>
+<%- include('partials/deleteSearch') %>
+
+			<!-- Tab content -->
+			<div class="updateTabcontent">
+				<div id="waiting-content">
+					<h2>ON WAITING</h2>
+					<form class="waiting-form" action="/waiting/<%- waiting._id %>?_method=DELETE" method="POST">
+						<fieldset class="waiting-fieldset">
+							<legend>DETAILS</legend>
+							<section class="inputs">
+								<span><input type="text" id="waitingID" value="<%- waiting.waitingID %>" name="waitingID" readonly><br>
+								<label for="waitingID">QueueID</label><br></span>
+							
+								<span><input class="cls-cID" type="text" id="childID" name="childID" value="<%- waiting.childID %>"><br>
+								<label class="cls-cID" for="childID">ChildID</label><br></span>
+		
+								<span><input type="text" id="waiting-specialist" name="specialist" value="<%- waiting.specialist %>"><br>
+								<label for="waiting-specialist">Specialist</label></span>
+
+								<span><input type="text" id="waiting-for" name="waitingFor" value="<%- waiting.waitingFor %>"><br>
+								<label for="waiting-for">Waiting for</label></span>
+								
+								<span><input type="text" id="waiting-consultation" name="status" value="<%- waiting.status %>"><br>
+								<label for="waiting-consultation">Consultation status</label></span><br>
+							</section>
+
+							<fieldset class="date-photo">
+								<span><input type="text" id="waiting-date" name="waitingDate" value="<%- waiting.waitingDate %>"><br>
+								<label for="waiting-date">Queue date</label><br></span>
+							</fieldset>
+	
+							<span class="btn">
+								<input type="submit" name="submit" value="Delete">
+							</span>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

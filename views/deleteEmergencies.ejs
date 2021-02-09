@@ -1,0 +1,39 @@
+<%- include('partials/header') %>
+<%- include('partials/deleteSearch') %>
+			<!-- Tab content -->
+			<div class="updateTabcontent">
+				<h2>CHILDS EMERGENCY RECORDS</h2>
+				<div class="visitors-content">
+					<table>
+						<thead>
+							<tr>
+								<th>No</th>
+								<th>Emergency Date</th>
+								<th>Brought By</th>
+								<th colspan="3">Action</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<% let num = 0 %>
+							<% emergencies.forEach(emergency => { %>
+								<tr>
+									<td><%- num += 1 %></td>
+									<td><%- emergency.regDate %></td>
+									<td><%- emergency.broughtBy %></td>
+									<td><a href="/emergency/<%- emergency._id%>">View</a></td>
+									<td><a href="/emergency/<%- emergency._id%>/edit">Edit</a></td>
+									<td>
+										<form action="/emergency/<%- emergency._id%>?_method=DELETE">
+											<button type="submit">Delete</button>
+										</form>
+									</td>
+								</tr>
+							<% }); %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

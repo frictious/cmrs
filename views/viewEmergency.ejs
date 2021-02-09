@@ -1,0 +1,43 @@
+<%- include('partials/header') %>
+<%- include('partials/viewSearch') %>
+			<!-- Tab content -->
+			<div class="updateTabcontent">
+				<div id="emergency-content">
+					<h2>EMERGENCY CASES</h2>
+					<form class="emergency-form" action="/emergency/add" method="POST">
+						<fieldset class="emergency-fieldset">
+							<legend>DETAILS</legend>
+							<section class="inputs-full">
+								<span><input type="text" id="emID" value="<%- emergency.emergencyID %>" name="emergencyID" readonly><br>
+								<label for="emID">EmergencyID</label><br></span>
+							
+								<span><input class="cls-cID" type="text" id="childID" name="childID" value="<%- emergency.childID %>" readonly><br>
+								<label class="cls-cID" for="childID">ChildID</label><br></span>
+		
+								<section id="em-reg-date">
+									<span><label>Date registered</label></span>
+									<span><input type="text" name="regDate" value="<%- emergency.regDate %>" readonly></span>
+								</section><br>
+							</section>
+
+							<section class="text-area-section">
+								<textarea class="text-area-full" placeholder="Emergency description here ..." name="emergencyDescription" readonly><%- emergency.emergencyDescription %></textarea>
+
+								<fieldset id="brought-by-info">
+									<span><input type="text" id="em-brought-by" name="broughtBy" value="<%- emergency.broughtBy %>" readonly><br>
+									<label for="em-brought-by">Brought by</label><br></span>
+		
+									<span><input type="text" id="em-bringer-number" name="bringersContact" value="<%- emergency.bringersContact %>" readonly><br>
+									<label for="em-bringer-number">Bringer's contact</label><br></span>
+		
+									<span><input type="text" id="em-relationship" name="relationship" value="<%- emergency.relationship %>" readonly><br>
+									<label for="em-relationship">Relationship to child</label><br></span>
+								</fieldset>
+							</section>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

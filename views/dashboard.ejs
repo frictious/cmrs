@@ -1,0 +1,78 @@
+<%- include('partials/header') %>
+		</div>
+	</div>
+
+	<!-- Content -->
+
+	<div id="dashboard-content">
+		<h2>DASHBOARD</h2>
+		<form class="dashboard-form">
+			<fieldset class="dashboard-fieldset">
+
+				<section id="dashboard-controls">
+
+				<% if(user.role === "Matron"){ %>
+					<section id="user-profile">
+						<img src="/images/Userpic.PNG"><br>
+						<a href="/profile/<%- user._id %>"><input type="button" value="Profile"></a>
+					</section>
+
+					<section id="input-forms">
+						<img src="/images/form.jpg"><br>
+						<a href="/data-entry"><input type="button" value="Forms"></a>
+					</section>
+
+					<section id="search-form">
+						<img src="/images/Searchrecord.png"><br>
+						<a href="/viewSearch"><input type="button" value="Search"></a>
+					</section>
+					
+				<% } else if(user.role === "Admin")  {%> 
+					<section id="user-profile">
+						<img src="/images/Userpic.PNG"><br>
+						<a href="/profile/<%- user._id %>"><input type="button" value="Profile"></a>
+					</section>
+
+					<section id="input-forms">
+						<img src="/images/form.jpg"><br>
+						<a href="/data-entry"><input type="button" value="Forms"></a>
+					</section>
+
+					<section id="search-form">
+						<img src="/images/Searchrecord.png"><br>
+						<a href="/editSearch"><input type="button" value="Search"></a>
+					</section>
+					
+					<section id="add-user">
+						<img src="/images/Adduser.png"><br>
+						<a href="/register"><input type="button" value="Add User"></a>
+					</section>
+
+					<section id="user">
+						<img src="/images/Userpic.PNG"><br>
+						<a href="/users"><input type="button" value="Users"></a>
+					</section>
+
+					<section id="reports">
+						<img src="/images/Report.png"><br>
+						<a href="/reports"><input type="button" value="Reports"></a>
+					</section>
+
+					<section id="delete">
+						<img src="/images/Report.png"><br>
+						<a href="/deleteSearch"><input type="button" value="Delete Records"></a>
+					</section>
+
+					<section id="about-form">
+						<img src="/images/Searchrecord.png"><br>
+						<a href="/about"><input type="button" value="About"></a>
+					</section>
+				
+				<% } %>
+
+				</section>
+
+			</fieldset>
+		</form>
+	</div>
+<%- include('partials/footer') %>

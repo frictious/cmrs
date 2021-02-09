@@ -1,0 +1,28 @@
+<%- include('partials/header') %>
+			<!-- Tab content -->
+			<div>
+				<form action="/editSearch" method="post" class="search-form">
+					<select name="options">
+						<option value="Child">Child</option>
+						<option value="Father">Father</option>
+						<option value="Mother">Mother</option>
+						<option value="Guardian">Guardian</option>
+						<option value="Admission">Admission</option>
+						<option value="Emergency">Emergency</option>
+						<option value="Waiting">Waiting</option>
+						<option value="Visitors">Visitors</option>
+						<option value="Referral">Referral</option>
+						<option value="Delivery">Delivery</option>
+						<option value="Deceased">Deceased</option>
+					</select>
+
+					<label for="search">
+						<input type="text" name="search" id="search" placeholder="Child ID">
+					</label>
+
+					<button type="submit">Search</button>
+				</form>
+			</div>
+		</div>
+	</main>
+<%- //include('partials/footer')%> 

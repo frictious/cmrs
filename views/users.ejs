@@ -1,0 +1,39 @@
+<%- include('partials/header') %>
+			<!-- Tab content -->
+			<div class="updateTabcontent">
+				<h2>REGISTERED USERS</h2>
+				<div class="visitors-content">
+					<table>
+						<thead>
+							<tr>
+								<th>No</th>
+								<th>Name</th>
+								<th>Email</th>
+								<th>Role</th>
+								<th colspan="2">Action</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<% let num = 0 %>
+							<% users.forEach(user => { %>
+								<tr>
+									<td><%- num += 1 %></td>
+									<td><%- user.name %></td>
+									<td><%- user.email %></td>
+									<td><%- user.role %></td>
+									<td><a href="/profile/<%- user._id%>">Edit</a></td>
+									<td>
+										<form method="POST" action="/user/<%- user._id %>?_method=DELETE">
+											<button type="submit">Delete</button>
+										</form>
+									</td>
+								</tr>
+							<% }); %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

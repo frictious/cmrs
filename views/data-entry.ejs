@@ -1,0 +1,695 @@
+<%- include('partials/header') %>
+<%- include('partials/data-entry') %>
+			
+			<!-- Tab content -->
+			<div class="tabcontent">
+				<div id="child-content">
+					<h2 id="child">CHILD DATA ENTRY</h2>
+					<form action="/child/add" method="POST" enctype="multipart/form-data" class="child-form">
+						<fieldset class ="child-fieldset">
+							<legend>DETAILS</legend>
+							
+							<section class="inputs">
+								<span><input class="cls-cID" type="text"  name="childID" id="childID" value="ODCMR-" readonly><br>
+								<label class="cls-cID" for="childID">ChildID</label><br></span>
+		
+								<span id="child-code"><input class="cls-child-code" type="text" id="child-code" name="childCode" value="<%- Date.now().toString().substring(6, 12)%>" readonly><br>
+								<label class="cls-child-code" for="child-code">Child Code<br></span>
+		
+								<br><span id="sp2-fname"><input class="cls-fname" type="text" id="firstname" name="firstName"><br>
+								<label class="cls-fname" for="firstname">First name</label><br></span>
+								
+								<span id="sp3-mname"><input class="cls-mname" type="text" id="middlename"><br>
+								<label class="cls-mname" name="otherName" for="middlename">Other name(s)</label><br></span>
+								
+								<span id="sp4-lname"><input class="cls-lname" type="text" id="lastname" name="lastName"><br>
+								<label class="cls-lname" for="lastname">Last name</label><br></span>
+		
+								<span id="sp5-gender"><input class="cls-gender" type="text" id="gender" name="gender"><br>
+								<label class="cls-gender" for="sex">Gender</label><br></span>
+		
+								<span id="sp9-nationality"><input class="cls-nationality" type="text" id="nationality" name="nationality"><br>
+								<label class="cls-nationality" for="nationality">Nationality</label><br></span>
+		
+								<span><input type="text" id="child-tribe" name="ethnicity"><br>
+								<label for="child-tribe">Tribe</label><br></span>
+		
+								<span id="sp10-religion"><input class="cls-religion" type="text" id="religion" name="religion"><br>
+								<label class="cls-religion" for="religion">Religion</label><br></span>
+		
+								<span id="registration-type"><input class="cls-registration-type" type="text" id="registration-type" name="registrationType"><br>
+								<label class="cls-registration-type" for="registration-type">Registration type<br></span>
+									
+								<span id="sp6-address"><input class="cls-address" type="text" id="c-address" name="address"><br>
+								<label class="cls-address" for="address">Residence address</label></span>
+							</section>
+
+							<fieldset class="date-photo">
+								<section>
+									<section class="reg-date">
+										<label>Reg date</label>
+										<input type="date" name="regDate">
+									</section><br>
+		
+									<section class="DOB">
+										<label>Date of birth</label>
+										<input type="date" name="dob">
+									</section><br>
+		
+									<section id="photo">
+										<img src="/images/Userpic.PNG">
+										<input id="c-browse-btn" type="file" value="Browse" name="photo">
+									</section>
+								</section>
+							</fieldset>	
+							
+							<span class="btn">
+								<input type="submit" name="submit" value="Submit">
+								<!-- <input type="button" name="add" value="Add New">
+								<input type="button" name="delete" value="Delete">
+								<input type="button" name="last" value="Last">
+								<input type="button" name="first" value="First">
+								<input type="button" name="previous" value="Previous">
+								<input type="button" name="next" value="Next"> -->
+							</span>
+						</fieldset>
+					</form>
+				</div>
+				
+				<div id="father-content">
+					<h2>FATHER DATA ENTRY</h2>
+					<form class="father-form">
+						<fieldset class="father-fieldset">
+							<legend>DETAILS</legend>
+							
+							<section class="inputs">
+								<span><input class="cls-cID" type="text"  name="fatherID" id="fID" name="fatherID" value=<%-`F-${Date.now().toString().substring(6, 12)}`%> readonly><br>
+								<label class="cls-cID" for="fID">Father ID</label><br></span>
+		
+								<span id="registration-number"><input type="text" name="childID" id="fChildID" readonly><br>
+								<label class="cls-registration-number" for="childID">Child ID</span><br>
+							
+								<span><input type="text" id="f-fname" name="firstName"><br>
+								<label for="f-fname">First name</label></span>
+		
+								<span><input type="text" id="f-mname" name="otherName"><br>
+								<label for="f-mname">Other name(s)</label><br></span>
+		
+								<span><input type="text" id="f-lname" name="lastName"><br>
+								<label for="f-lname">Last name</label><br></span>
+								
+								<span><input type="text" id="f-gender" name="gender"><br>
+								<label for="f-gender">Gender</label><br></span>
+		
+								<span><input type="text" id="f-nationality" name="nationality"><br>
+								<label for="f-nationality">Nationality</label><br></span>
+					
+								<span><input type="text" id="f-marital-status" name="maritalStatus"><br>
+								<label for="f-marital-status">Marital status</label><br></span>
+		
+								<span><input type="text" id="f-occupation" name="occupation"><br>
+								<label for="f-occupation">Occupation</label><br></span>
+		
+								<span><input type="text" id="f-edu-status" name="educationalLevel"><br>
+								<label for="f-edu-status">Educational level</label><br></span>
+		
+								<span><input type="text" id="f-number-of-children" name="noOfChildren"><br>
+								<label for="f-number-of-children">No. of children</label><br></span>
+		
+								<!-- <span><input class="f-children-alive" type="text" id="f-children-alive"><br>
+								<label class="f-children-alive" for="f-children-alive">Children alive</label><br></span>
+		
+								<span><input class="cls-f-ADT" type="number" id="f-ADT"><br>
+								<label class="cls-f-ADT" for="f-ADT">Age at delivery time</label><br></span>
+		
+								<span><input class="cls-f-tribe" type="text" id="f-tribe"><br>
+								<label class="cls-f-tribe" for="f-tribe">Tribe</label><br></span> -->
+		
+								<span><input type="text" id="f-contact-number" name="contact"><br>
+								<label for="f-contact-number">Contact number</label><br></span>
+		
+								<span><input type="text" id="f-address" name="address"><br>
+								<label for="f-address">Residence address</label><br></span>
+							</section>
+
+							<fieldset class="date-photo">
+								<section>
+									<section class="reg-date">
+										<label>Reg date</label>
+										<input type="date" name="regDate">
+									</section><br>
+		
+									<section class="DOB">
+										<label>Date of birth</label>
+										<input type="date" name="dob">
+									</section><br>
+		
+									<section id="photo">
+										<img src="/images/Userpic.PNG">
+										<input id="f-browse-btn" type="file" name="photo" value="Browse">
+									</section>
+								</section>
+							</fieldset>	
+	
+							<span class="btn">
+								<input type="button" name="submit" value="Submit">
+								<input type="button" name="add" value="Add New">
+								<input type="button" name="delete" value="Delete">
+								<input type="button" name="last" value="Last">
+								<input type="button" name="first" value="First">
+								<input type="button" name="previous" value="Previous">
+								<input type="button" name="next" value="Next">
+							</span>
+						</fieldset>
+					</form>
+				</div>
+	
+				<div id="mother-content">
+					<h2>MOTHER DATA ENTRY</h2>
+					<form class="mother-form">
+						<fieldset class="mother-fieldset">
+							<legend>DETAILS</legend>
+							<!-- Inputs section -->
+							<section class="inputs">
+								<span><input class="cls-cID" type="text"  name="motherID" id="mID" value=<%-`M-${Date.now().toString().substring(6, 12)}`%>><br>
+								<label class="cls-cID" for="mID">Mother ID</label><br></span>
+		
+								<span id="registration-number"><input type="text" id="registration-number" name="childID" readonly><br>
+								<label class="cls-registration-number" for="childID">Child ID</span><br>
+		
+								<span><input type="text" id="m-fname" name="firstName"><br>
+								<label for="m-fname">First name</label></span>
+		
+								<span><input type="text" id="m-mname" name="otherName"><br>
+								<label for="m-mname">Other name(s)</label><br></span>
+		
+								<span><input type="text" id="m-lname" name="lastName"><br>
+								<label for="m-lname">Last name</label><br></span>
+								
+								<span><input type="text" id="m-gender" name="gender"><br>
+								<label for="m-gender">Gender</label><br></span>
+		
+								<span><input type="text" id="m-nationality" name="nationality"><br>
+								<label for="m-nationality">Nationality</label><br></span>
+					
+								<span><input type="text" id="m-marital-status" name="maritalStatus"><br>
+								<label for="m-marital-status">Marital status</label><br></span>
+		
+								<span><input type="text" id="m-occupation" name="occupation"><br>
+								<label for="m-occupation">Occupation</label><br></span>
+		
+								<span><input type="text" id="m-edu-status" name="educationalLevel"><br>
+								<label for="m-edu-status">Educational level</label><br></span>
+		
+								<span><input type="text" id="m-number-of-children" name="noOfChildren"><br>
+								<label for="m-number-of-children">No. of children</label><br></span>
+		
+								<!-- <span><input type="text" id="m-children-alive"><br>
+								<label for="m-children-alive">Children alive</label><br></span>
+		
+								<span><input class="cls-m-ADT" type="number" id="m-ADT"><br>
+								<label class="cls-m-ADT" for="m-ADT">Age at delivery time</label><br></span>
+		
+								<span><input class="cls-m-tribe" type="text" id="m-tribe"><br>
+								<label class="cls-m-tribe" for="m-tribe">Tribe</label><br></span> -->
+		
+								<span><input type="text" id="m-contact-number" name="contact"><br>
+								<label for="m-contact-number">Contact number</label><br></span>
+		
+								<span><input type="text" id="m-address" name="address"><br>
+								<label for="m-address">Residence address</label><br></span>
+							</section>
+							<!-- End of inputs section -->
+
+							<fieldset class="date-photo">
+								<section>
+									<section class="reg-date">
+										<label>Reg date</label>
+										<input type="date" name="regDate">
+									</section><br>
+		
+									<section class="DOB">
+										<label>Date of birth</label>
+										<input type="date" name="dob">
+									</section><br>
+		
+									<section id="photo">
+										<img src="/images/Userpic.PNG">
+										<input id="m-browse-btn" type="file" name="photo" value="Browse">
+									</section>
+								</section>
+							</fieldset>	
+	
+							<span class="btn">
+								<input type="submit" name="submit" value="Submit">
+								<input type="button" name="add" value="Add New">
+								<input type="button" name="delete" value="Delete">
+								<input type="button" name="last" value="Last">
+								<input type="button" name="first" value="First">
+								<input type="button" name="previous" value="Previous">
+								<input type="button" name="next" value="Next">
+							</span>
+						</fieldset>
+					</form>
+				</div>
+	
+				<div id="guardian-content">
+					<h2>GUARDIAN DATA ENTRY</h2>
+					<form class="guardian-form">
+						<fieldset class="guardian-fieldset">
+							<legend>DETAILS</legend>
+							<section class="inputs">
+								<input type="text" id="gID" name="guardianID" value=<%-`G-${Date.now().toString().substring(6, 12)}`%>><br>
+								<label for="gID">GuardianID</label><br>	
+							
+								<span><input type="text" id="g-fname" name="firstName"><br>
+								<label for="g-fname">First name</label></span>
+		
+								<span><input type="text" id="g-mname" name="otherName"><br>
+								<label for="g-mname">Other name(s)</label><br></span>
+		
+								<span><input type="text" id="g-lname" name="lastName"><br>
+								<label for="g-lname">Last name</label><br></span>
+								
+								<span><input type="text" id="g-gender" name="gender"><br>
+								<label for="g-gender">Gender</label><br></span>
+		
+								<span><input type="text" id="g-nationality" name="nationality"><br>
+								<label for="g-nationality">Nationality</label><br></span>
+					
+								<span><input type="text" id="g-marital-status" name="maritalStatus"><br>
+								<label for="g-marital-status">Marital status</label><br></span>
+		
+								<span><input type="text" id="g-occupation" name="occupation"><br>
+								<label for="g-occupation">Occupation</label><br></span>
+		
+								<span><input type="text" id="g-edu-status" name="educationalLevel"><br>
+								<label for="g-edu-status">Educational level</label><br></span>
+		
+								<span><input type="text" id="g-number-of-children" name="noOfChildren"><br>
+								<label for="g-number-of-children">No. of children</label><br></span>
+		
+								<span><input type="text" id="g-contact-number" name="contact"><br>
+								<label for="g-contact-number">Contact number(s)</label><br></span>
+		
+								<span><input type="text" id="g-address" name="address"><br>
+								<label for="g-address">Residence address</label><br></span>
+							</section>
+
+							<fieldset class="date-photo">
+								<section>
+									<section class="reg-date">
+										<label>Reg date</label>
+										<input type="date" name="regDate">
+									</section><br>
+		
+									<section class="DOB">
+										<label>Date of birth</label>
+										<input type="date" name="dob">
+									</section><br>
+		
+									<section id="photo">
+										<img src="/images/Userpic.PNG">
+										<input id="g-browse-btn" type="file" name="photo" value="Browse">
+									</section>
+								</section>
+							</fieldset>
+	
+							<span class="btn">
+								<input type="submit" name="submit" value="Submit">
+								<input type="button" name="add" value="Add New">
+								<input type="button" name="delete" value="Delete">
+								<input type="button" name="last" value="Last">
+								<input type="button" name="first" value="First">
+								<input type="button" name="previous" value="Previous">
+								<input type="button" name="next" value="Next">
+							</span>
+						</fieldset>
+					</form>
+				</div>
+	
+				<div id="admission-content">
+					<h2>ADMISSION DATA ENTRY</h2>
+					<form class="admission-form">
+						<fieldset class="admission-fieldset">
+							<legend>DETAILS</legend>
+							<section class="inputs">
+								<span><input type="text" id="admissionID" value=<%-`ADN-${Date.now().toString().substring(6, 12)}`%> name="admissionID"><br>
+								<label for="admissionID">Admission number</label></span>
+		
+								<span><input class="cls-cID" type="text" id="childID" name="childID"><br>
+								<label class="cls-cID" for="childID">ChildID</label><br></span>
+								
+								<span><input type="text" id="admission-ward" name="ward"><br>
+								<label for="admission-ward">Ward</label><br></span>
+		
+								<span><input type="number" id="admission-bed" name="bedNumber"><br>
+								<label for="admission-bed">Bed number</label><br></span>
+		
+								<span><input type="text" id="admission-specialist" name="specialist"><br>
+								<label for="admission-specialist">Specialist</label><br></span>
+							</section>
+
+							<fieldset class="date-photo">
+								<span><input type="date" name="admittedDate" id="date-admitted"><br>
+								<label for="date-admitted">Date Admitted</label><br></span>
+							</fieldset>
+
+							<section class="ward-admission-section">
+								<fieldset id="ward-detail-fieldset">
+									<legend id="ward-legend">WARD DESCRIPTION</legend>
+									<textarea class="text-area" name="wardDescription"></textarea>
+								</fieldset>
+	
+								<fieldset id="admission-detail-fieldset">
+									<legend id="admission-legend">ADMISSION DETAILS</legend>
+									<textarea class="text-area" name="admissionDetail"></textarea>
+								</fieldset>	
+							</section>
+	
+							<span class="btn">
+								<input type="submit" name="submit" value="Submit">
+								<input type="button" name="add" value="Add New">
+								<input type="button" name="delete" value="Delete">
+								<input type="button" name="last" value="Last">
+								<input type="button" name="first" value="First">
+								<input type="button" name="previous" value="Previous">
+								<input type="button" name="next" value="Next">
+							</span>
+						</fieldset>
+					</form>
+				</div>
+	
+				<div id="emergency-content">
+					<h2>EMERGENCY CASES</h2>
+					<form class="emergency-form">
+						<fieldset class="emergency-fieldset">
+							<legend>DETAILS</legend>
+							<section class="inputs-full">
+								<span><input type="text" id="emID"><br>
+								<label for="emID">AccidentID</label><br></span>
+							
+								<span><input class="cls-cID" type="text" id="childID"><br>
+								<label class="cls-cID" for="childID">ChildID</label><br></span>
+		
+								<section id="em-reg-date">
+									<span><label>Date registered</label></span>
+									<span><input type="date"></span>
+								</section><br>
+		
+								<span><input type="text" id="em-marital-status"><br>
+								<label for="em-marital-status">Marital status</label><br></span>
+		
+								<span><input type="text" id="em-injury"><br>
+								<label for="em-injury">Injury</label><br></span>
+		
+								<span><input type="text" id="em-treatment"><br>
+								<label for="em-treatment">Treatment</label><br></span><br>
+							</section>
+
+							<section class="text-area-section">
+								<textarea class="text-area-full" placeholder="Emergency description here ..." name="emergency"></textarea>
+
+								<fieldset id="brought-by-info">
+									<span><input type="text" id="em-brought-by"><br>
+									<label for="em-brought-by">Brought by</label><br></span>
+		
+									<span><input type="text" id="em-bringer-number"><br>
+									<label for="em-bringer-number">Bringer's contact</label><br></span>
+		
+									<span><input type="text" id="em-relationship"><br>
+									<label for="em-relationship">Relationship to child</label><br></span>
+								</fieldset>
+							</section>
+	
+	
+							<span class="btn">
+								<input type="button" name="submit" value="Submit">
+								<input type="button" name="add" value="Add New">
+								<input type="button" name="delete" value="Delete">
+								<input type="button" name="last" value="Last">
+								<input type="button" name="first" value="First">
+								<input type="button" name="previous" value="Previous">
+								<input type="button" name="next" value="Next">
+							</span>
+						</fieldset>
+					</form>
+				</div>
+	
+				<div id="waiting-content">
+					<h2>ON WAITING</h2>
+					<form class="waiting-form">
+						<fieldset class="waiting-fieldset">
+							<legend>DETAILS</legend>
+							<section class="inputs">
+								<span><input type="text" id="waitingID"><br>
+								<label for="waitingID">QueueID</label><br></span>
+							
+								<span><input class="cls-cID" type="text" id="childID"><br>
+								<label class="cls-cID" for="childID">ChildID</label><br></span>
+		
+								<span><input type="text" id="waiting-specialist"><br>
+								<label for="waiting-specialist">Specialist</label></span>
+								
+								<span><input type="text" id="waiting-consultation"><br>
+								<label for="waiting-consultation">Consultation status</label></span><br>
+							</section>
+
+							<fieldset class="date-photo">
+								<span><input type="date" id="waiting-date"><br>
+								<label for="waiting-date">Queue date</label><br></span>
+							</fieldset>
+	
+							<span class="btn">
+								<input type="button" name="submit" value="Submit">
+								<input type="button" name="add" value="Add New">
+								<input type="button" name="delete" value="Delete">
+								<input type="button" name="last" value="Last">
+								<input type="button" name="first" value="First">
+								<input type="button" name="previous" value="Previous">
+								<input type="button" name="next" value="Next">
+							</span>
+						</fieldset>
+					</form>
+				</div>
+	
+				<div id="appointment-content">
+					<h2>APPOINTMENT WITH CHILD</h2>
+					<form class="appointment-form">
+						<fieldset class="appointment-fieldset">
+							<legend>DETAILS</legend>
+							<section class="inputs">
+								<span><input type="text" id="appointmentID"><br>
+								<label for="appointmentID">AppointmentID</label><br></span>
+							
+								<span><input class="cls-cID" type="text" id="childID"><br>
+								<label class="cls-cID" for="childID">ChildID</label><br></span>
+	
+								<span><input type="text" id="appointment-subject"><br>
+								<label for="appointment-subject">Subject</label></span><br>
+	
+								<span><input type="text" id="appointment-specialist"><br>
+								<label for="appointment-specialist">Specialist</label></span>
+	
+								<span><input type="text" id="appointment"><br>
+								<label for="appointment">Appointment</label></span>
+							</section>
+
+							<section class="date-photo">
+								<span><label for="appointment-date">Date visited</label></span>
+								<span><input type="date" id="appointment-date"></span><br>
+								<span><label for="appointment-time">Time of appointment</label></span>
+								<span><input type="time" id="appointment-time"></span>
+							</section>
+
+							<section class="text-area-section">
+								<textarea class="text-area-full" placeholder="Detail of appointment" name="appointment"></textarea>
+							</section>
+	
+							<span class="btn">
+								<input type="button" name="submit" value="Submit">
+								<input type="button" name="add" value="Add New">
+								<input type="button" name="delete" value="Delete">
+								<input type="button" name="last" value="Last">
+								<input type="button" name="first" value="First">
+								<input type="button" name="previous" value="Previous">
+								<input type="button" name="next" value="Next">
+							</span>
+						</fieldset>
+					</form>
+				</div>
+	
+				<div id="referral-content">
+					<h2>REFERRAL</h2>
+					<form class="referral-form">
+						<fieldset class="referral-fieldset">
+							<legend>DETAILS</legend>
+							<section class="inputs">
+								<span><input type="text" id="referral-number"><br>
+								<label for="referral-number">Referral number</label><br></span>
+							
+								<span><input class="cls-cID" type="text" id="childID"><br>
+								<label class="cls-cID" for="childID">ChildID</label><br></span>
+		
+								<span><input type="text" id="refer-to"><br>
+								<label for="refer-to">Refer to</label></span><br>
+		
+								<span><input type="text" id="referral-from"><br>
+								<label for="referral-from">Referral from clinic</label></span>
+								
+								<span><input type="text" id="referral-to"><br>
+								<label for="referral-to">Refer to clinic</label></span>
+							</section>
+
+							<fieldset class="date-photo">
+								<span><input type="date" id="date-referred"></br>
+								<label for="date-referred">Date referred</label><br></span>
+							</fieldset>
+	
+							<span class="btn">
+								<input type="button" name="submit" value="Submit">
+								<input type="button" name="add" value="Add New">
+								<input type="button" name="delete" value="Delete">
+								<input type="button" name="last" value="Last">
+								<input type="button" name="first" value="First">
+								<input type="button" name="previous" value="Previous">
+								<input type="button" name="next" value="Next">
+							</span>
+						</fieldset>
+					</form>
+				</div>
+	
+				<div id="delivery-content">
+					<h2>DELIVERY</h2>
+					<form class="referral-form">
+						<fieldset class="referral-fieldset">
+							<legend>DETAILS</legend>
+							<section class="inputs">
+								<span><input type="text" id="deliveryID"><br>
+								<label for="deliveryID">DeliveryID</label></span>
+		
+								<span><input class="cls-cID" type="text" id="childID"><br>
+								<label class="cls-cID" for="childID">ChildID</label></span>
+							
+								<span><input class="cls-fID" type="text" id="fID"><br>
+								<label class="cls-fID" for="fID">FatherID</label></span>
+		
+								<span><input class="cls-mID" type="text" id="mID"><br>
+								<label class="cls-mID" for="mID">MotherID</label></span>
+		
+								<span><input type="text" id="place-of-delivery"><br>
+								<label for="place-of-delivery">Place of delivery</label></span>
+		
+								<span><input type="text" id="type-of-delivery"><br>
+								<label for="type-of-delivery">Type of delivery</label></span>
+					
+								<span><input type="text" id="attendant-at-birth"><br>
+								<label for="attendant-at-birth">Attendant at birth</label></span>
+							</section>
+
+							<fieldset class="date-photo">
+								<span><label for="delivery-registered-date">Date registered for delivery</label></br>
+								<input type="date" id="delivery-registered-date"><br></span>
+								<span><label for="date-delivered">Delivery Date</label></br>
+								<input type="date" id="date-delivered"><br></span>
+								<span><label for="time-of-delivery">Time of delivery</label><br>
+								<input type="time" id="time-of-delivery"><br><span>
+							</fieldset>
+	
+							<span class="btn">
+								<input type="button" name="submit" value="Submit">
+								<input type="button" name="add" value="Add New">
+								<input type="button" name="delete" value="Delete">
+								<input type="button" name="last" value="Last">
+								<input type="button" name="first" value="First">
+								<input type="button" name="previous" value="Previous">
+								<input type="button" name="next" value="Next">
+							</span>
+						</fieldset>
+					</form>
+				</div>
+	
+				<div id="deceased-content">
+					<h2>DECEASED</h2>
+					<form class="deceased-form">
+						<fieldset class="deceased-fieldset">
+							<legend>DETAILS</legend>
+							<section class="inputs">
+								<span><input type="text" id="deceasedID"><br>
+								<label for="deceasedID">DeceasedID</label></span>
+		
+								<span><input class="cls-cID" type="text" id="childID"><br>
+								<label class="cls-cID" for="childID">ChildID</label><br></span><br>
+							
+								<span><input type="text" id="deceased-fname"><br>
+								<label for="deceased-fname">First name</label></span>
+		
+								<span><input type="text" id="deceased-mname"><br>
+								<label for="deceased-mname">Other name(s)</label></span>
+		
+								<span><input type="text" id="deceased-lname"><br>
+								<label for="deceased-lname">Last name</label></span><br>
+								
+								<span><input type="text" id="deceased-gender"><br>
+								<label for="deceased-gender">Gender</label></span>
+		
+								<span><input type="text" id="deceased-nationality"><br>
+								<label for="deceased-nationality">Nationality</label></span>
+					
+								<span><input type="text" id="deceased-tribe"><br>
+								<label for="deceased-tribe">Tribe</label></span><br>
+		
+								<!-- <span><input type="text" id="deceased-edu-status"><br>
+								<label for="deceased-edu-status">Educational level</label></span> -->
+		
+								<span><input type="text" id="cause-of-death"><br>
+								<label for="cause-of-death">Cause of death</label></span>
+		
+								<span><input class="area-of-incident" type="text" id="area-of-incident"><br>
+								<label class="area-of-incident" for="area-of-incident">Area of incident</label></span><br>
+		
+								<span><input class="assumed-area-of-incident" type="text" id="assumed-area-of-incidence"><br>
+								<label class="assumed-area-of-incidence" for="assumed-area-of-incident">Assumed area of incidence</label></span>
+		
+								<span><input type="text" id="deceased-address"><br>
+								<label for="deceased-address">Residence address</label></span>
+							</section>
+
+							<fieldset class="date-photo">
+								<span><input type="date" id="date-of-death"><br>
+								<label for="date-of-death">Date of death</label></span>
+
+								<span><input type="time" id="time-of-death"><br>
+								<label for="time-of-death">Time of death</label></span>
+								
+								<!-- <span><label for="delivery-registered-date">Date registered for delivery</label></br>
+								<input type="date" id="delivery-registered-date"><br></span>
+								<span><label for="date-delivered">Delivery Date</label></br>
+								<input type="date" id="date-delivered"><br></span>
+								<span><label for="time-of-delivery">Time of delivery</label><br>
+								<input type="time" id="time-of-delivery"><br><span> -->
+								<!-- <section>
+									
+								</section>
+								<section>
+									
+								</section> -->
+							</fieldset>
+	
+							<span class="btn">
+								<input type="button" name="submit" value="Submit">
+								<input type="button" name="add" value="Add New">
+								<input type="button" name="delete" value="Delete">
+								<input type="button" name="last" value="Last">
+								<input type="button" name="first" value="First">
+								<input type="button" name="previous" value="Previous">
+								<input type="button" name="next" value="Next">
+							</span>
+						</fieldset>
+					</form>
+				</div>
+	
+			</div>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

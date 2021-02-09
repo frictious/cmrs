@@ -1,0 +1,50 @@
+<%- include('partials/header') %>
+<%- include('partials/viewSearch') %>
+			<!-- Tab content -->
+			<div class="updateTabcontent">
+				<div id="delivery-content">
+					<h2>DELIVERY</h2>
+					<form class="referral-form">
+						<fieldset class="referral-fieldset" action="/delivery/add" method="POST">
+							<legend>DETAILS</legend>
+							<section class="inputs">
+								<span><input type="text" id="deliveryID" value="<%- delivery.deliveryID %>" readonly name="deliveryID"><br>
+								<label for="deliveryID">Delivery ID</label></span>
+		
+								<span><input class="cls-cID" type="text" id="childID" name="childID" value="<%- delivery.childID %>" readonly><br>
+								<label class="cls-cID" for="childID">Child ID</label></span>
+							
+								<span><input class="cls-fID" type="text" id="fID" name="fatherID" value="<%- delivery.fatherID%>" readonly><br>
+								<label class="cls-fID" for="fID">FatherID</label></span>
+		
+								<span><input class="cls-mID" type="text" id="mID" name="motherID" value="<%- delivery.motherID%>" readonly><br>
+								<label class="cls-mID" for="mID">MotherID</label></span>
+		
+								<span><input type="text" id="place-of-delivery" name="placeOfDelivery" value="<%- delivery.placeOfDelivery %>" readonly><br>
+								<label for="place-of-delivery">Place of delivery</label></span>
+		
+								<span><input type="text" id="type-of-delivery" name="typeOfDelivery" value="<%- delivery.typeOfDelivery %>" readonly><br>
+								<label for="type-of-delivery">Type of delivery</label></span>
+					
+								<span><input type="text" id="attendant-at-birth" name="deliveredBy" value="<%- delivery.deliveredBy %>" readonly><br>
+								<label for="attendant-at-birth">Delivered By</label></span>
+
+								<span><input type="text" id="centre" name="registrationCentre" value="<%- delivery.registrationCentre %>" readonly><br>
+								<label for="centre">Delivery Centre</label></span>
+							</section>
+
+							<fieldset class="date-photo">
+								<input type="text" id="delivery-registered-date" name="deliveryRegDate" value="<%- delivery.deliveryRegDate %>" readonly><br></span>
+								<span><label for="delivery-registered-date">Date registered for delivery</label><br>
+								<input type="text" id="date-delivered" name="dateDelivered" value="<%- delivery.dateDelivered %> " readonly><br></span>
+								<span><label for="date-delivered">Delivery Date</label><br>
+								<input type="text" id="time-of-delivery" name="timeOfDelivery" value="<%- delivery.timeOfDelivery %>" readonly><br><span>
+								<span><label for="time-of-delivery">Time of delivery</label><br>
+							</fieldset>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

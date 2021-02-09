@@ -1,0 +1,41 @@
+<%- include('partials/header') %>
+<%- include('partials/reportSearch') %>
+			<!-- Tab content -->
+			<div class="updateTabcontent">
+				<h2>CHILD VISITORS</h2>
+				<div class="visitors-content">
+					<table>
+						<thead>
+							<tr>
+								<th>No</th>
+								<th>Name</th>
+								<th>Purpose</th>
+								<th>Date (Month/Day/Year)</th>
+								<th colspan="3">Action</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<% let num = 0 %>
+							<% visitors.forEach(visitor => { %>
+								<tr>
+									<td class="centered"><%- num += 1 %></td>
+									<td class="centered"><%- visitor.name %></td>
+									<td class="centered"><%- visitor.purpose %></td>
+									<td class="centered"><%- visitor.date.toLocaleString().substring(0, 10) %></td>
+									<td class="centered"><a href="/visitors/<%- visitor._id%>">View</a></td>
+									<td class="centered"><a href="/visitors/<%- visitor._id%>/edit">Edit</a></td>
+									<td class="centered">
+										<form action="/visitors/<%- visitor._id %>?_method=DELETE" method="POST">
+											<button type="submit">Delete</button>
+										</form>
+									</td>
+								</tr>
+							<% }); %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

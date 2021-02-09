@@ -1,0 +1,40 @@
+<%- include('partials/header') %>
+<%- include('partials/reportSearch') %>
+			<!-- Tab content -->
+			<div class="updateTabcontent">
+				<h2>CHILD DIAGNOSIS RECORDS</h2>
+				<div class="visitors-content">
+					<table>
+						<thead>
+							<tr>
+								<th>No</th>
+								<th>Diagnosed By</th>
+								<th>Date of Diagnosis</th>
+								<!--<th>Specialist in Charge</th>-->
+								<th colspan="3">Action</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<% let num = 0 %>
+							<% diagnosis.forEach(diagnosis => { %>
+								<tr>
+									<td class="centered"><%- num += 1 %></td>
+									<td class="centered"><%- diagnosis.diagnosedBy %></td>
+									<td class="centered"><%- diagnosis.created %></td>
+									<td class="centered"><a href="/diagnosis/<%- diagnosis._id %>">View</a></td>
+									<td class="centered"><a href="/diagnosis/<%- diagnosis._id %>/edit">Edit</a></td>
+									<td class="centered">
+										<form action="/diagnosis/<%- diagnosis._id %>?_method=DELETE" method="POST">
+											<button type="submit">Delete</button>
+										</form>
+									</td>
+								</tr>
+							<% }); %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

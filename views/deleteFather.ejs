@@ -1,0 +1,80 @@
+<%- include('partials/header') %>
+<%- include('partials/deleteSearch') %>
+			<!-- Tab content -->
+			<div class="updateTabcontent">
+				<div id="father-content">
+					<h2>FATHER DATA ENTRY</h2>
+					<form class="father-form" action="/father/<%- father._id %>?_method=DELETE" method="POST" enctype="multipart/form-data">
+						<fieldset class="father-fieldset">
+							<legend>DETAILS</legend>
+							
+							<section class="inputs">
+								<span><input class="cls-cID" type="text"  name="fatherID" id="fID" name="fatherID" value="<%- father.fatherID %>" readonly><br>
+								<label class="cls-cID" for="fID">Father ID</label><br></span>
+		
+								<span id="registration-number"><input type="text" name="childID" id="fChildID" value="<%- father.childId %>"><br>
+								<label class="cls-registration-number" for="childID">Child ID</span><br>
+							
+								<span><input type="text" id="f-fname" name="firstName" value="<%- father.firstName %>"><br>
+								<label for="f-fname">First name</label></span>
+		
+								<span><input type="text" id="f-mname" name="otherName" value="<%- father.otherName %>"><br>
+								<label for="f-mname">Other name(s)</label><br></span>
+		
+								<span><input type="text" id="f-lname" name="lastName" value="<%- father.lastName %>"><br>
+								<label for="f-lname">Last name</label><br></span>
+								
+								<span><input type="text" id="f-gender" name="gender" value="<%- father.gender %>"><br>
+								<label for="f-gender">Gender</label><br></span>
+		
+								<span><input type="text" id="f-nationality" name="nationality" value="<%- father.nationality %>"><br>
+								<label for="f-nationality">Nationality</label><br></span>
+					
+								<span><input type="text" id="f-marital-status" name="maritalStatus" value="<%- father.maritalStatus %>"><br>
+								<label for="f-marital-status">Marital status</label><br></span>
+		
+								<span><input type="text" id="f-occupation" name="occupation" value="<%- father.occupation %>"><br>
+								<label for="f-occupation">Occupation</label><br></span>
+		
+								<span><input type="text" id="f-edu-status" name="educationalLevel" value="<%- father.educationalLevel %>"><br>
+								<label for="f-edu-status">Educational level</label><br></span>
+		
+								<span><input type="text" id="f-number-of-children" name="noOfChildren" value="<%- father.noOfChildren %>"><br>
+								<label for="f-number-of-children">No. of children</label><br></span>
+		
+								<span><input type="text" id="f-contact-number" name="contact" value="<%-father.contact %>"><br>
+								<label for="f-contact-number">Contact number</label><br></span>
+		
+								<span><input type="text" id="f-address" name="address" value="<%- father.address %>"><br>
+								<label for="f-address">Residence address</label><br></span>
+							</section>
+
+							<fieldset class="date-photo">
+								<section>
+									<section class="reg-date">
+										<label>Reg date</label>
+										<input type="text" name="regDate" value="<%- father.regDate.toLocaleString().substring(0, 10) %>">
+									</section><br>
+		
+									<section class="DOB">
+										<label>Date of birth</label>
+										<input type="text" name="dob" value="<%- father.dob.toLocaleString().substring(0, 10) %>">
+									</section><br>
+		
+									<section id="photo">
+										<img src="/files/<%- father.photo %>">
+										<input id="f-browse-btn" type="file" name="photo" value="Browse">
+									</section>
+								</section>
+							</fieldset>	
+	
+							<span class="btn">
+								<input type="submit" value="Delete">
+							</span>
+						</fieldset>
+					</form>
+				</div>	
+			</div>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

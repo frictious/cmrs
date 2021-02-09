@@ -1,0 +1,98 @@
+<%- include('partials/header') %>
+<%- include('partials/data-entry') %>
+			
+			<!-- Tab content -->
+			<div class="tabcontent">
+				<div id="father-content">
+					<h2>FATHER DATA ENTRY</h2>
+					<form class="father-form" action="/father/add" method="POST" enctype="multipart/form-data">
+						<fieldset class="father-fieldset">
+							<legend>DETAILS</legend>
+							
+							<section class="inputs">
+								<span><input class="cls-cID" type="text"  name="fatherID" id="fID" name="fatherID" value=<%-`F-${Date.now().toString().substring(6, 12)}`%> readonly><br>
+								<label class="cls-cID" for="fID">Father ID</label><br></span>
+		
+								<span id="registration-number"><input type="text" name="childID" id="fChildID"><br>
+								<label class="cls-registration-number" for="childID">Child ID</span><br>
+							
+								<span><input type="text" id="f-fname" name="firstName"><br>
+								<label for="f-fname">First name</label></span>
+		
+								<span><input type="text" id="f-mname" name="otherName"><br>
+								<label for="f-mname">Other name(s)</label><br></span>
+		
+								<span><input type="text" id="f-lname" name="lastName"><br>
+								<label for="f-lname">Last name</label><br></span>
+								
+								<span><input type="text" id="f-gender" name="gender"><br>
+								<label for="f-gender">Gender</label><br></span>
+		
+								<span><input type="text" id="f-nationality" name="nationality"><br>
+								<label for="f-nationality">Nationality</label><br></span>
+					
+								<span><input type="text" id="f-marital-status" name="maritalStatus"><br>
+								<label for="f-marital-status">Marital status</label><br></span>
+		
+								<span><input type="text" id="f-occupation" name="occupation"><br>
+								<label for="f-occupation">Occupation</label><br></span>
+		
+								<span><input type="text" id="f-edu-status" name="educationalLevel"><br>
+								<label for="f-edu-status">Educational level</label><br></span>
+		
+								<span><input type="text" id="f-number-of-children" name="noOfChildren"><br>
+								<label for="f-number-of-children">No. of children</label><br></span>
+		
+								<!-- <span><input class="f-children-alive" type="text" id="f-children-alive"><br>
+								<label class="f-children-alive" for="f-children-alive">Children alive</label><br></span>
+		
+								<span><input class="cls-f-ADT" type="number" id="f-ADT"><br>
+								<label class="cls-f-ADT" for="f-ADT">Age at delivery time</label><br></span>
+		
+								<span><input class="cls-f-tribe" type="text" id="f-tribe"><br>
+								<label class="cls-f-tribe" for="f-tribe">Tribe</label><br></span> -->
+		
+								<span><input type="text" id="f-contact-number" name="contact"><br>
+								<label for="f-contact-number">Contact number</label><br></span>
+		
+								<span><input type="text" id="f-address" name="address"><br>
+								<label for="f-address">Residence address</label><br></span>
+							</section>
+
+							<fieldset class="date-photo">
+								<section>
+									<section class="reg-date">
+										<label>Reg date</label>
+										<input type="date" name="regDate">
+									</section><br>
+		
+									<section class="DOB">
+										<label>Date of birth</label>
+										<input type="date" name="dob">
+									</section><br>
+		
+									<section id="photo">
+										<img src="/images/Userpic.PNG">
+										<input id="f-browse-btn" type="file" name="photo" value="Browse">
+									</section>
+
+									<a href="/snap" class="webcam"> <img src="/images/camera.png" alt="">Take Picture</a>
+								</section>
+							</fieldset>	
+	
+							<span class="btn">
+								<input type="submit" name="submit" value="Submit">
+								<!--<input type="button" name="add" value="Add New">
+								<input type="button" name="delete" value="Delete">
+								<input type="button" name="last" value="Last">
+								<input type="button" name="first" value="First">
+								<input type="button" name="previous" value="Previous">
+								<input type="button" name="next" value="Next">-->
+							</span>
+						</fieldset>
+					</form>
+				</div>	
+			</div>
+		</div>
+	</main>
+<%- include('partials/footer')%> 

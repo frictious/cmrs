@@ -1,0 +1,94 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+}
+
+.header {
+    grid-area: header;
+}
+
+.Main {
+    grid-area: main;
+}
+
+.login-section {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: minmax(115px, 700px);
+    grid-template-areas: 'header header header header header header' 'main main main main main main';
+    grid-gap: 5px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.login-section .Main{
+    background: rgba(20, 35, 20, 0.9);
+    text-align: center;
+    padding: 270px;
+    font-size: 30px;
+    border-radius: 12px;
+}
+
+.login-section .Main {
+    background: rgba(255, 255, 255, 0.5);
+    height: 50px;
+    width: 500px;
+    margin-left: 255px;
+}
+
+.header {
+    text-align: left;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    background: rgba(20, 35, 20, 0.9);
+    border-radius: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-gap: 20px;
+}
+
+.header span {
+    /* margin-left: 200px; */
+    grid-column: 1 / 2;
+    transition: 2s ease;
+    border: 1px solid green;
+}
+
+.header #app-heading {
+    display: inline-block;
+    margin-left: 75px;
+    text-transform: uppercase;
+    transition: 8s ease;
+}
+
+.header #log-out-btn {
+    display: block;
+    float: right;
+    transition: 14s ease;
+}
+
+/* form input {
+    width: 255px;
+    height: 30px;
+    font-size: 18px;
+    padding: 2px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+} */
+
+/* label {
+    color: rgba(20, 35, 20, 0.9);
+    font-weight: bold;
+} */
+
+.Main>#login-button-id {
+    margin-left: 195px;
+    color: rgba(20, 35, 20, 0.9);
+    font-weight: bolder;
+}
